@@ -14,22 +14,19 @@ RAID 5 là một cấu hình RAID phổ biến cung cấp khả năng dự phòn
 1. **Chọn Create Virtual Disk**:
    - Trong giao diện Dell PERC, chọn **Create Virtual Disk** để bắt đầu cấu hình RAID.
 
-   ![Create Virtual Disk](https://github.com/cuongnvvietis/NhanHoa/raw/main/create_virtual_disk.png)
 
 2. **Chọn RAID Level**:
    - Trong màn hình tiếp theo, chọn **RAID 5** từ danh sách các cấp RAID.
 
-   ![Select RAID Level](https://github.com/cuongnvvietis/NhanHoa/raw/main/select_raid_level.png)
-
 3. **Chọn Các Ổ Đĩa**:
    - Chọn ít nhất ba ổ đĩa mà bạn muốn sử dụng cho RAID 5. Đảm bảo các ổ đĩa đã được kết nối và nhận diện bởi PERC.
 
-   ![Select Disks](https://github.com/cuongnvvietis/NhanHoa/raw/main/select_disks.png)
+   ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_7.png)
 
 4. **Xác Nhận Cấu Hình**:
    - Kiểm tra lại cấu hình RAID 5 của bạn và chọn **OK** để xác nhận và tạo RAID 5.
 
-   ![Confirm Configuration](https://github.com/cuongnvvietis/NhanHoa/raw/main/confirm_configuration.png)
+   ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_8.png)
 
 ## Bước 3: Lưu Cài Đặt và Khởi Động Lại Máy Chủ
 
@@ -39,12 +36,3 @@ RAID 5 là một cấu hình RAID phổ biến cung cấp khả năng dự phòn
 2. **Khởi Động Lại Máy Chủ**:
    - Khởi động lại máy chủ để các thay đổi có hiệu lực.
 
-   ![Save and Exit](https://github.com/cuongnvvietis/NhanHoa/raw/main/save_and_exit.png)
-
-## Tổng Kết
-
-Bằng cách làm theo các bước trên, bạn đã hoàn tất việc cài đặt RAID 5 cho máy chủ Dell PowerEdge R620 của mình. RAID 5 cung cấp sự cân bằng giữa hiệu suất và bảo vệ dữ liệu, giúp bảo vệ dữ liệu quan trọng trong hệ thống của bạn.
-
----
-
-Nếu bạn cần thêm thông tin hoặc có bất kỳ câu hỏi nào khác, đừng ngần ngại hỏi nhé!
