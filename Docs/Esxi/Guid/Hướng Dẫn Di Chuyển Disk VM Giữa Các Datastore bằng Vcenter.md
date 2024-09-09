@@ -1,4 +1,4 @@
-# Hướng Dẫn Di Chuyển Disk VM Giữa Các Datastore Trên VMware ESXi
+# Hướng Dẫn Di Chuyển Disk VM Giữa Các Datastore Trên VMware ESXi bằng Vcenter
 
 Di chuyển một ổ đĩa của máy ảo (VM) giữa các datastore giúp bạn tối ưu hóa không gian lưu trữ hoặc quản lý tài nguyên hiệu quả hơn. Dưới đây là các bước thực hiện.
 
