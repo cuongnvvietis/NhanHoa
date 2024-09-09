@@ -48,16 +48,14 @@ Phục hồi một máy ảo từ tệp OVF qua vCenter là một quy trình đ�
 
    ![Select Storage](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_36.png)
 
-## Bước 7: Xem Lại Chi Tiết
+## Bước 7: Cấu Hình Network
+
+1. **Cấu Hình Network**:
+   - Chọn các network mà máy ảo sẽ kết nối đến. Bạn có thể phải cấu hình các adapter mạng để phù hợp với cấu hình mạng của bạn.
+
+   ![Configure Network](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_37.png)
+
+## Bước 8: Xem Lại Chi Tiết
 
 1. **Kiểm Tra Thông Tin**:
-   - Kiểm tra tất cả các thông tin đã chọn, bao gồm tên máy ảo, tài nguyên tính toán và lưu trữ.
-
-   ![Review Details](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_37.png)
-
-## Bước 8: Hoàn Tất Triển Khai
-
-1. **Xác Nhận và Hoàn Tất**:
-   - Xác nhận các thiết lập và hoàn tất quá trình triển khai máy ảo từ tệp OVF.
-
-   ![Finish Deployment](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_38.png)
+   - Kiểm tra tất cả các thông tin đã chọn, bao gồm tên máy ảo, tài nguyên tính toán, lưu trữ, và cấu hình mạng.
