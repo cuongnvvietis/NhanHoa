@@ -19,7 +19,7 @@ iDRAC (Integrated Dell Remote Access Controller) cho phép bạn cài đặt và
 
    ![ESXi Installation via HTML5](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_10.png)
 
-## Bước 3: Tải Lên Tệp Cài Đặt ESXi
+## Bước 3: Truy cập vào giao diện để cấu hình
 
 1. **Truy Cập Menu Connect Virtual Media**:
    - Trong giao diện iDRAC, chọn **Connect Virtual Media** từ thanh điều hướng chính.
