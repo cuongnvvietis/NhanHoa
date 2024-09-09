@@ -28,7 +28,7 @@ Snapshot là một công cụ quan trọng giúp bạn lưu lại trạng thái 
 2. **Cung Cấp Thông Tin Snapshot**:
    - Nhập tên cho snapshot và mô tả nếu cần thiết. Chọn các tùy chọn bổ sung như **Snapshot the virtual machine’s memory** và **Quiesce guest file system** nếu cần.
 
-   ![Snapshot Details](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snapshot/Screenshot_40.png)
+   ![Snapshot Details](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snaphost/Screenshot_40.png)
 
 3. **Xác Nhận Tạo Snapshot**:
    - Nhấp vào **OK** để bắt đầu quá trình tạo snapshot.
@@ -38,7 +38,7 @@ Snapshot là một công cụ quan trọng giúp bạn lưu lại trạng thái 
 1. **Xem Danh Sách Snapshot**:
    - Để xem các snapshot đã tạo, nhấp chuột phải vào máy ảo và chọn **Snapshots** > **Manage Snapshots**.
 
-   ![Manage Snapshots](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snapshot/Screenshot_41.png)
+   ![Manage Snapshots](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snaphost/Screenshot_41.png)
 
 2. **Khôi Phục hoặc Xóa Snapshot**:
    - Trong giao diện quản lý snapshot, bạn có thể chọn để khôi phục (revert to) hoặc xóa (delete) snapshot. Chọn snapshot cần khôi phục hoặc xóa, sau đó nhấp vào **Revert** hoặc **Delete**.
