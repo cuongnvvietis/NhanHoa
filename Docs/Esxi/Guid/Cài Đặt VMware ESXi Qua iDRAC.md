@@ -36,34 +36,32 @@ iDRAC (Integrated Dell Remote Access Controller) cho phép bạn cài đặt và
 2. **Khởi Động Lại Máy Chủ**:
    - Sau khi mount xong, chọn **Reset Server** để vào chế độ Boot Manager bằng phím `F11`.
 
-   ![Boot Manager](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_13.png)
+   ![Boot Manager](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_14.png)
 
 3. **Chọn Menu Boot**:
    - Chọn **One-shot BIOS boot menu** và sau đó chọn **Virtual Optical Drive** để boot từ ISO cài đặt ESXi.
 
-   ![Boot Menu](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197402241.png)
+   ![Boot Menu](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_15.png)
 
 4. **Chờ Boot**:
    - Chờ khoảng 2-5 phút để máy chủ boot vào bộ cài đặt ESXi.
 
-   ![Booting](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197428452.png)
+   ![Booting](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_16.png)
 
 ## Bước 5: Cài Đặt VMware ESXi
 
 1. **Giao Diện Cài Đặt**:
    - Khi bộ cài đặt ESXi load xong, bạn sẽ thấy giao diện cài đặt.
 
-   ![Installation Interface](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197447671.png)
-
 2. **Tiếp Tục Cài Đặt**:
    - Nhấn `Enter` để tiếp tục cài đặt.
 
-   ![Continue Installation](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197473186.png)
+   ![Continue Installation](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_17.png)
 
 3. **Chấp Nhận Điều Khoản**:
    - Nhấn `F11` để đồng ý với điều khoản và tiếp tục.
 
-   ![Accept Terms](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197491446.png)
+   ![Accept Terms](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_18.png)
 
 4. **Chọn Ổ Đĩa Cài Đặt**:
    - Chọn ổ đĩa để cài đặt ESXi và nhấn `Enter` để tiếp tục.
