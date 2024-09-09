@@ -15,7 +15,7 @@ Phục hồi một máy ảo từ tệp OVF qua vCenter là một quy trình đ�
 1. **Chọn Deploy OVF Template**:
    - Nhấp vào **Actions** và chọn **Deploy OVF Template** từ menu.
 
-   ![Deploy OVF Template](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_31.png)
+   ![Deploy OVF Template](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_31.png)
 
 ## Bước 3: Chọn Tệp OVF
 
@@ -25,33 +25,39 @@ Phục hồi một máy ảo từ tệp OVF qua vCenter là một quy trình đ�
 2. **Chọn Tệp OVF và VMDK**:
    - Duyệt và chọn tệp OVF và các tệp VMDK liên quan.
 
-   ![Select OVF and VMDK](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_32.png)
+   ![Select OVF and VMDK](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_32.png)
 
 ## Bước 4: Đặt Tên và Chọn Thư Mục
 
 1. **Đặt Tên Cho Máy Ảo**:
    - Đặt tên cho máy ảo và chọn thư mục nơi sẽ lưu trữ máy ảo trong vCenter.
 
-   ![Name and Folder](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_33.png)
+   ![Name and Folder](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_33.png)
 
 ## Bước 5: Chọn Tài Nguyên Tính Toán (Compute Resource)
 
 1. **Chọn Host hoặc Cluster**:
-   - Chọn host hoặc cluster nơi bạn muốn triển khai máy ảo. 
+   - Chọn host hoặc cluster nơi bạn muốn triển khai máy ảo.
 
-   ![Select Host or Cluster](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_34.png)
+   ![Select Host or Cluster](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_34.png)
 
 ## Bước 6: Chọn Lưu Trữ (Storage)
 
 1. **Chọn Datastore**:
    - Chọn datastore mà bạn muốn lưu trữ cấu hình và đĩa ảo của máy ảo.
 
-   ![Select Storage](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_36.png)
+   ![Select Storage](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_36.png)
 
-   ## Bước 6: Xem Lại Chi Tiết
+## Bước 7: Xem Lại Chi Tiết
 
 1. **Kiểm Tra Thông Tin**:
    - Kiểm tra tất cả các thông tin đã chọn, bao gồm tên máy ảo, tài nguyên tính toán và lưu trữ.
 
-   ![Review Details](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Disk/Screenshot_37.png)
+   ![Review Details](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_37.png)
 
+## Bước 8: Hoàn Tất Triển Khai
+
+1. **Xác Nhận và Hoàn Tất**:
+   - Xác nhận các thiết lập và hoàn tất quá trình triển khai máy ảo từ tệp OVF.
+
+   ![Finish Deployment](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Restore/Screenshot_38.png)
