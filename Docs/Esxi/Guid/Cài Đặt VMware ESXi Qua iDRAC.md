@@ -66,37 +66,30 @@ iDRAC (Integrated Dell Remote Access Controller) cho phép bạn cài đặt và
 4. **Chọn Ổ Đĩa Cài Đặt**:
    - Chọn ổ đĩa để cài đặt ESXi và nhấn `Enter` để tiếp tục.
 
-   ![Select Disk](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197504991.png)
-
 5. **Tạo Mật Khẩu Root**:
    - Tạo mật khẩu cho tài khoản root (ít nhất 7 ký tự) và nhấn `Enter` để tiếp tục.
 
-   ![Set Root Password](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197517793.png)
+   ![Set Root Password](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_19.png)
 
 6. **Quá Trình Cài Đặt**:
    - Quá trình cài đặt sẽ mất khoảng 2-5 phút. Khi hoàn tất, máy chủ sẽ tự khởi động lại.
 
-   ![Installation Complete](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197541086.png)
+   ![Installation Complete](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_21.png)
 
 ## Bước 6: Cấu Hình ESXi Sau Cài Đặt
 
 1. **Đăng Nhập vào ESXi**:
    - Khi cài đặt xong, bạn sẽ thấy giao diện cấu hình ESXi. Nhấn `F2` để đăng nhập bằng tên người dùng `root` và mật khẩu đã đặt.
 
-   ![ESXi Interface](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197562882.png)
+   ![ESXi Interface](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_22.png)
 
 2. **Cấu Hình Mạng**:
    - Chọn **Configure Management Network** để cấu hình IP và Hostname.
    - Chọn **IPv4** và cấu hình IP tĩnh (nhấn `Space` để chọn mục). Nhấn `Enter` để lưu lại.
 
-   ![Configure Management Network](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197592828.png)
-
-   - Để thay đổi Hostname và DNS, chọn **DNS Configuration** và chọn **Use the following DNS server addresses and hostname**.
-
-   ![DNS Configuration](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197700022.png)
+   ![Configure Management Network](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Setup%20Esxi/Screenshot_23.png)
 
 3. **Khởi Động Lại Mạng**:
    - Nhấn `ESC` để thoát ra và chọn **Restart Network** để thay đổi IP. Sau đó, dùng trình duyệt web truy cập vào ESXi bằng đường dẫn `https://<IP-ESXI>`.
 
-   ![Restart Network](https://github.com/cuongnvvietis/NhanHoa/raw/main/1610197725272.png)
 
