@@ -18,8 +18,6 @@ Snapshot là một công cụ quan trọng giúp bạn lưu lại trạng thái 
 2. **Chọn Máy Ảo**:
    - Tìm và chọn máy ảo mà bạn muốn tạo snapshot.
 
-   ![Select VM](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snapshot/Screenshot_02.png)
-
 ## Bước 3: Tạo Snapshot
 
 1. **Chọn Tạo Snapshot**:
