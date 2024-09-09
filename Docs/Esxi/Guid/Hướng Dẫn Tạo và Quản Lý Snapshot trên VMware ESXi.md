@@ -23,7 +23,7 @@ Snapshot là một công cụ quan trọng giúp bạn lưu lại trạng thái 
 1. **Chọn Tạo Snapshot**:
    - Nhấp chuột phải vào máy ảo đã chọn và chọn **Snapshots** > **Take Snapshot**.
 
-   ![Take Snapshot](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snapshot/Screenshot_39.png)
+   ![Take Snapshot](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Snaphost/Screenshot_39.png)
 
 2. **Cung Cấp Thông Tin Snapshot**:
    - Nhập tên cho snapshot và mô tả nếu cần thiết. Chọn các tùy chọn bổ sung như **Snapshot the virtual machine’s memory** và **Quiesce guest file system** nếu cần.
