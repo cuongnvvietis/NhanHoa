@@ -55,7 +55,7 @@ Hướng dẫn này sẽ giúp bạn sao lưu và khôi phục cấu hình của
 6. **Khôi Phục Cấu Hình**
    - Chạy lệnh sau để khôi phục cấu hình từ file sao lưu:
      ```bash
-     vim-cmd hostsvc/firmware/restore_config /backup_location/configBundle.tgz
+     vim-cmd hostsvc/firmware/restore_config /tmp/configBundle.tgz
      ```
    - Thay `/backup_location` bằng thư mục thực tế nơi bạn đã sao chép file sao lưu.
    ![Khôi phục cấu hình](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Backup/Screenshot_66.png)
