@@ -77,7 +77,10 @@ Di chuyển máy ảo giữa các host ESXi bằng vCenter có thể được th
    ![Select Network](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Datastore/Screenshot_60.png)
 
 6. **Chọn Ưu Tiên vMotion**:
-   - Chọn mức độ ưu tiên vMotion cho việc di chuyển máy ảo, như **High**, **Medium**, hoặc **Low**. Nhấp **Next**.
+   - Chọn mức độ ưu tiên vMotion cho việc di chuyển máy ảo:
+     - **Schedule vMotion with high priority (recommended)**: vMotion nhận được ưu tiên lập lịch CPU cao hơn, giúp hoàn tất việc di chuyển nhanh hơn.
+     - **Schedule normal vMotion**: vMotion nhận được ưu tiên lập lịch CPU thấp hơn, có thể kéo dài thời gian di chuyển.
+   - Nhấp **Next**.
 
    ![Select vMotion Priority](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Datastore/Screenshot_61.png)
 
