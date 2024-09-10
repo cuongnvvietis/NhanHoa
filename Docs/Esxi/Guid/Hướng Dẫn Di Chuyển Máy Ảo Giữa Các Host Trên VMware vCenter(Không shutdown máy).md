@@ -22,7 +22,9 @@ Di chuyển máy ảo giữa các host ESXi bằng vCenter có thể được th
 
    ![Vmotion](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Datastore/Screenshot_54.png)
 
-4. **Lặp Lại Trên Host Khác**:
+   ![Vmotion](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Move%20Datastore/Screenshot_63.png)
+
+5. **Lặp Lại Trên Host Khác**:
    - Lặp lại các bước trên để cấu hình vMotion cho các host còn lại.
 
 ## Phần II: Di Chuyển Máy Ảo Giữa Các Host
