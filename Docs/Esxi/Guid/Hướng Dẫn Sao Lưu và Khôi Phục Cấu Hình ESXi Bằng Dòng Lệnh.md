@@ -7,7 +7,7 @@ Hướng dẫn này sẽ giúp bạn sao lưu và khôi phục cấu hình của
 
 1. **Kết Nối Với Máy Chủ ESXi Qua SSH**
    - Đảm bảo bạn đã bật SSH trên máy chủ ESXi và kết nối vào máy chủ qua SSH bằng công cụ như PuTTY hoặc Terminal trên hệ điều hành Unix/Linux.
-   ![Kết nối SSH](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Backup/Screenshot_66.png)
+   ![Kết nối SSH](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Backup/Screenshot_73.png)
 
 2. **Đồng Bộ Hóa Cấu Hình**
    - Chạy lệnh sau để đảm bảo tất cả các thay đổi cấu hình được lưu vào file mục tiêu:
