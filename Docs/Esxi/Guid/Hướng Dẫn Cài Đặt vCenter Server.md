@@ -18,11 +18,16 @@ Trước khi cài đặt, hãy đảm bảo máy chủ của bạn đáp ứng c
 - **RAM:** Tối thiểu 12 GB RAM.
 - **Dung Lượng Ổ Đĩa:** Tối thiểu 300 GB dung lượng đĩa trống.
 - **ESXi Host:** vCenter yêu cầu một máy chủ ESXi để cài đặt. Bạn cần ESXi 6.5 trở lên.
+- **DNS:** Đảm bảo cấu hình DNS chính xác và có thể phân giải tên vCenter Server.
 
 ## Chuẩn Bị Cài Đặt
 
 1. **Download vCenter ISO:**
    - Truy cập trang chủ VMware và tải file ISO của vCenter Server về máy tính của bạn.
+
+2. **Chuẩn Bị Tên và Địa Chỉ IP:**
+   - Đặt trước hostname và địa chỉ IP cho vCenter Server.
+   - Cấu hình DNS trên hệ thống của bạn để hostname và IP khớp nhau.
 
 ## Tải và Mount File ISO
 
@@ -32,19 +37,27 @@ Trước khi cài đặt, hãy đảm bảo máy chủ của bạn đáp ứng c
 
 2. **Chạy Trình Cài Đặt:**
    - Vào thư mục chứa file cài đặt và chạy file **`installer.exe`** (trên Windows) hoặc **`installer`** (trên Linux).
+  
+   ![Yêu cầu hệ thống](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Vcenter/Screenshot_89.png)
 
 ## Cài Đặt vCenter Server - Giai Đoạn 1
 
 1. **Bắt Đầu Quá Trình Cài Đặt:**
    - Chọn **Install** để bắt đầu cài đặt vCenter Server.
+  
+   ![Yêu cầu hệ thống](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Vcenter/Screenshot_90.png)
 
 2. **Chọn Địa Chỉ Triển Khai:**
    - Điền địa chỉ IP của máy chủ ESXi mà bạn sẽ cài đặt vCenter Server lên.
    - Cung cấp thông tin xác thực của ESXi host để tiếp tục.
+  
+    ![Yêu cầu hệ thống](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Vcenter/Screenshot_92.png)
 
 3. **Cấu Hình Thông Tin vCenter:**
    - Đặt tên cho vCenter Server và địa chỉ IP đã chuẩn bị trước.
    - Đảm bảo DNS và IP có thể phân giải lẫn nhau.
+  
+   ![Yêu cầu hệ thống](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Vcenter/Screenshot_94.png)
 
 4. **Chọn Kích Thước Cấu Hình:**
    - Chọn cấu hình kích thước cho vCenter (Tiny, Small, Medium, Large) dựa trên nhu cầu của hệ thống.
