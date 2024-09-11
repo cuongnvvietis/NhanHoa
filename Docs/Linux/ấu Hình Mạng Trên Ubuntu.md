@@ -28,9 +28,9 @@
             - 8.8.8.8
             - 8.8.4.4
 sudo netplan apply
-                     ```
+            
 2. **Tạo Tập Tin Cấu Hình `netplan`**
-
+    ```bash
   systemctl status NetworkManager
   nmcli connection modify eth0 ipv4.addresses 192.168.1.100/24
   nmcli connection modify eth0 ipv4.gateway 192.168.1.1
