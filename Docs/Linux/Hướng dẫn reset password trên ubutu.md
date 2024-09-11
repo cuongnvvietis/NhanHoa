@@ -1,4 +1,4 @@
-# Hướng Dẫn Reset Password trên Ubuntu 18.04
+# Hướng Dẫn Reset Password trên Ubuntu 
 
 Nếu bạn quên mật khẩu của tài khoản người dùng trên Ubuntu 18.04, bạn có thể thực hiện theo các bước sau để reset mật khẩu.
 
