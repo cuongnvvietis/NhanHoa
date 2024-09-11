@@ -56,7 +56,7 @@ Hướng dẫn này sẽ giúp bạn reset mật khẩu Windows Server bằng c�
 
 ## Bước 5: Reset Mật Khẩu
 
-1. Khi máy tính khởi động, ở màn hình đăng nhập, nhấn **Windows Key + U** để mở Command Prompt. Hoặc biểu tượng như hình 108
+1. Khi máy tính khởi động, ở màn hình đăng nhập, nhấn **Windows Key + U** để mở Command Prompt. Hoặc biểu tượng như hình dưới
 2. Trong Command Prompt, gõ lệnh sau để reset mật khẩu:
 
     ```bash
@@ -65,7 +65,7 @@ Hướng dẫn này sẽ giúp bạn reset mật khẩu Windows Server bằng c�
 
     Thay thế `<username>` bằng tên người dùng và `<newpassword>` bằng mật khẩu mới.
    
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_100.png)
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_108.png)
 
 4. Đăng nhập bằng mật khẩu mới và khôi phục file `Utilman.exe` nếu cần:
 
