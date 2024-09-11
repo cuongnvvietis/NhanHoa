@@ -18,8 +18,9 @@ Nếu bạn quên mật khẩu của tài khoản người dùng trên Ubuntu 18
 ## Bước 3: Reset Mật Khẩu
 
 1. Khi vào được dòng lệnh, bạn sẽ thấy dấu nhắc `#`.
-2. Gõ lệnh sau để đổi mật khẩu cho tài khoản người dùng của bạn (thay `username` bằng tên người dùng của bạn):
+2. Gõ lệnh sau để cấp quyền chỉnh sửa và đổi mật khẩu cho tài khoản người dùng của bạn (thay `username` bằng tên người dùng của bạn):
    ```bash
+   mount -o remount,rw /
    passwd root 
 
 ![Chế độ Recovery Mode](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_97.png)
