@@ -35,7 +35,7 @@
    - Vào **Home** > **Backups** > **Disk** để xem danh sách các bản sao lưu.
    - Nhấp chuột phải vào bản sao lưu của máy ảo mà bạn muốn khôi phục và chọn **Restore entire VM**.
 
-   ![Chọn máy ảo để khôi phục](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_74.png)
+   ![Chọn máy ảo để khôi phục](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_88.png)
 
 3. **Chọn Loại Khôi Phục:**
    - Chọn phương thức khôi phục phù hợp, ví dụ: **Restore to the original location** (Khôi phục đến vị trí ban đầu) hoặc **Restore to a new location** (Khôi phục đến vị trí mới).
@@ -46,7 +46,7 @@
 5. **Chạy Quá Trình Khôi Phục:**
    - Xác nhận các lựa chọn và nhấn **Finish** để bắt đầu quá trình khôi phục máy ảo.
 
-   ![Hình ảnh quá trình khôi phục](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_74.png)
+   ![Hình ảnh quá trình khôi phục](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_86.png)
 
 ---
 
