@@ -96,7 +96,7 @@
 4. **Đặt Lịch Trình Sao Lưu:**
    - Đặt lịch trình sao lưu tự động theo ngày hoặc tuần.
 
-![Hình ảnh tạo job sao lưu](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_74.png)
+![Hình ảnh tạo job sao lưu](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Veem/Screenshot_87.png)
 
 5. **Hoàn Thành Job Sao Lưu:**
    - Kiểm tra lại các tùy chọn và hoàn tất việc thiết lập job sao lưu.
