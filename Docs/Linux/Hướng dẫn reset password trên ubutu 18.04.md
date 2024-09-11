@@ -22,4 +22,4 @@ Nếu bạn quên mật khẩu của tài khoản người dùng trên Ubuntu 18
    ```bash
    passwd root 
 
-   ![Chế độ Recovery Mode](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_97.png)
+![Chế độ Recovery Mode](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_97.png)
