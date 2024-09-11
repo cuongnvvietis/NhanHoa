@@ -2,7 +2,7 @@
 
 ## Mục tiêu
 
-Hướng dẫn này sẽ giúp bạn cấu hình nhiều VLAN trên máy chủ ESXi bằng cách tạo một vSwitch tên là `SW-TRUNK` và thêm các Port Groups cho VLAN 10 và VLAN 20.
+Hướng dẫn này sẽ giúp bạn cấu hình nhiều VLAN trên máy chủ ESXi bằng cách tạo một vSwitch tên là `SW-TRUNK` và thêm các Port Groups cho VLAN 10 và VLAN 11.
 
 ## Điều kiện tiên quyết
 
@@ -46,8 +46,5 @@ Hướng dẫn này sẽ giúp bạn cấu hình nhiều VLAN trên máy chủ E
 
 ## Kết luận
 
-Bạn đã hoàn tất việc cấu hình Multi VLAN trên ESXi với vSwitch `SW-TRUNK` và các Port Groups cho VLAN 10 và VLAN 20. Lưu lượng mạng của các VLAN sẽ được phân tách hiệu quả.
+Bạn đã hoàn tất việc cấu hình Multi VLAN trên ESXi với vSwitch `SW-TRUNK` và các Port Groups cho VLAN 10 và VLAN 11. Lưu lượng mạng của các VLAN sẽ được phân tách hiệu quả.
 
----
-
-Nếu bạn có thêm câu hỏi hoặc cần hỗ trợ, đừng ngần ngại liên hệ.
