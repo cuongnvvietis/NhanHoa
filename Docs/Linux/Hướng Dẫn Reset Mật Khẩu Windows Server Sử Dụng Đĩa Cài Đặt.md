@@ -34,26 +34,19 @@ Hướng dẫn này sẽ giúp bạn reset mật khẩu Windows Server bằng c�
 
 ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_106.png)
 
-3. Chọn **"Command Prompt"**.
+4. Chọn **"Command Prompt"**.
 
 ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_107.png)
 
 ## Bước 3: Thay Đổi File System
 
-1. Trong Command Prompt, gõ các lệnh sau để sao lưu và thay thế file `Utilman.exe`:
+1. Sao lưu và thay thế `Utilman.exe`:
 
     ```bash
-    diskpart
-    list volume
-    exit
-    ```
-    Xác định ký tự ổ đĩa của phân vùng hệ điều hành (thường là `C:`).
-
-2. Sao lưu và thay thế `Utilman.exe`:
-
-    ```bash
-    copy C:\Windows\System32\Utilman.exe C:\
-    copy C:\Windows\System32\cmd.exe C:\Windows\System32\Utilman.exe
+    c:
+    cd Windows\System32
+    ren Utilman.exe Ulilman.exe.old
+    copy cmd.exe Utilman.exe
     ```
   ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_100.png)
   
@@ -63,7 +56,7 @@ Hướng dẫn này sẽ giúp bạn reset mật khẩu Windows Server bằng c�
 
 ## Bước 5: Reset Mật Khẩu
 
-1. Khi máy tính khởi động, ở màn hình đăng nhập, nhấn **Windows Key + U** để mở Command Prompt.
+1. Khi máy tính khởi động, ở màn hình đăng nhập, nhấn **Windows Key + U** để mở Command Prompt. Hoặc biểu tượng như hình 108
 2. Trong Command Prompt, gõ lệnh sau để reset mật khẩu:
 
     ```bash
@@ -71,8 +64,10 @@ Hướng dẫn này sẽ giúp bạn reset mật khẩu Windows Server bằng c�
     ```
 
     Thay thế `<username>` bằng tên người dùng và `<newpassword>` bằng mật khẩu mới.
+   
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_100.png)
 
-3. Đăng nhập bằng mật khẩu mới và khôi phục file `Utilman.exe` nếu cần:
+4. Đăng nhập bằng mật khẩu mới và khôi phục file `Utilman.exe` nếu cần:
 
     ```bash
     copy C:\Utilman.exe C:\Windows\System32\Utilman.exe
