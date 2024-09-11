@@ -13,7 +13,7 @@
 
    ```bash
    sudo nano /etc/netplan/01-netcfg.yaml
-   ```bash
+
    network:
     version: 2
     renderer: networkd
@@ -27,7 +27,7 @@
           addresses:
             - 8.8.8.8
             - 8.8.4.4
-    ```bash
+
    sudo netplan apply
             
 2. **Tạo Tập Tin Cấu Hình `netplan`**
