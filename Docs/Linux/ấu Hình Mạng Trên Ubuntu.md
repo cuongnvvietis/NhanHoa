@@ -27,7 +27,7 @@
             - 8.8.8.8
             - 8.8.4.4
 sudo netplan apply
-
+                     ```
 2. **Tạo Tập Tin Cấu Hình `netplan`**
 
   systemctl status NetworkManager
