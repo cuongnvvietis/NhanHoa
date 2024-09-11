@@ -13,7 +13,8 @@
 
    ```bash
    sudo nano /etc/netplan/01-netcfg.yaml
-  network:
+   ```bash
+   network:
     version: 2
     renderer: networkd
     ethernets:
