@@ -1,7 +1,6 @@
 # Hướng Dẫn Cấu Hình Mạng Sử Dụng `network-scripts` Trên CentOS, Rocky Linux, và AlmaLinux
 
-## 1. Xác Định Tên Card Mạng
-
+##1. Xác định tên card mạng
 Đầu tiên, xác định tên của card mạng bạn muốn cấu hình:
 ```bash
 ip a
