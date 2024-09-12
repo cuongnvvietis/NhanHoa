@@ -9,21 +9,16 @@
    Các cấu hình mạng được lưu trữ trong thư mục /etc/sysconfig/network-scripts/. Tệp cấu hình có tên theo định dạng ifcfg-<tên-cards-mạng>. Ví dụ: ifcfg-ens33
 
    ```bash
-   sudo nano /etc/netplan/01-netcfg.yaml
+   sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
-   network:
-    version: 2
-    renderer: networkd
-    ethernets:
-      eth0:
-        dhcp4: no
-        addresses:
-          - 192.168.1.100/24
-        gateway4: 192.168.1.1
-        nameservers:
-          addresses:
-            - 8.8.8.8
-            - 8.8.4.4
+   DEVICE=ens33
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=192.168.1.100
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.1
+DNS1=8.8.8.8
+DNS2=8.8.4.4
 
    sudo netplan apply
             
