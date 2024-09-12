@@ -20,16 +20,8 @@
    DNS1=8.8.8.8
    DNS2=8.8.4.4
 
-   sudo netplan apply
+   sudo systemctl restart network
             
-2. **Tạo Tập Tin Cấu Hình `netplan`**
-    ```bash
-     systemctl status NetworkManager
-     nmcli connection modify eth0 ipv4.addresses 192.168.1.100/24
-     nmcli connection modify eth0 ipv4.gateway 192.168.1.1
-     nmcli connection modify eth0 ipv4.dns "8.8.8.8,8.8.4.4"
-     nmcli connection modify eth0 ipv4.method manual
-     nmcli connection down eth0
-     nmcli connection up eth0
+
 
 
