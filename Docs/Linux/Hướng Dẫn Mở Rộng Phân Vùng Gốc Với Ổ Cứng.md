@@ -41,17 +41,17 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 
 1. **Khởi Tạo Partition Mới Cho LVM**:
 
-    sudo pvcreate /dev/sdb1
+       sudo pvcreate /dev/sdb1
 
 2. **Thêm Physical Volume Vào Volume Group**:
 
    Xác định Volume Group hiện tại của bạn:
 
-    sudo vgdisplay
+        sudo vgdisplay
 
    Thêm phân vùng mới vào Volume Group:
 
-    sudo vgextend ubuntu-vg /dev/sdb1
+        sudo vgextend ubuntu-vg /dev/sdb1
 
 ## Mở Rộng Logical Volume
 
@@ -59,17 +59,17 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 
    Kiểm tra Logical Volume hiện tại:
 
-    sudo lvdisplay
+        sudo lvdisplay
 
 2. **Mở Rộng Logical Volume**:
 
    Sử dụng `lvextend` để mở rộng Logical Volume. Ví dụ: mở rộng Logical Volume `ubuntu-lv` trong Volume Group `ubuntu-vg` để sử dụng toàn bộ không gian mới:
 
-    sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+        sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
 
    Hoặc nếu bạn chỉ muốn mở rộng thêm một kích thước cụ thể, ví dụ 5GB:
 
-    sudo lvextend -L +5G /dev/ubuntu-vg/ubuntu-lv
+        sudo lvextend -L +5G /dev/ubuntu-vg/ubuntu-lv
 
 ## Mở Rộng Hệ Thống Tệp
 
@@ -77,11 +77,11 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 
    Đối với hệ thống tệp `ext4`:
 
-    sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
+        sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
 
    Đối với hệ thống tệp `XFS` (nếu bạn đang sử dụng XFS):
 
-    sudo xfs_growfs /
+        sudo xfs_growfs /
 
 ## Kiểm Tra Kết Quả
 
@@ -89,7 +89,3 @@ Sau khi hoàn tất, kiểm tra kích thước phân vùng gốc để đảm b�
 
     df -h
 
-## Tài Liệu Tham Khảo
-
-- [Ubuntu Documentation: LVM](https://ubuntu.com/server/docs/lvm)
-- [LVM Howto](https://www.tldp.org/HOWTO/LVM-HOWTO/)
