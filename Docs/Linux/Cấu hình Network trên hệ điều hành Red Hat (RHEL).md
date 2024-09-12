@@ -1,11 +1,11 @@
 # Hướng Dẫn Cấu Hình Mạng Sử Dụng `network-scripts` Trên CentOS, Rocky Linux, và AlmaLinux
 
-##1. Xác định tên card mạng
+## 1. Xác định tên card mạng
 Đầu tiên, xác định tên của card mạng bạn muốn cấu hình:
 ```bash
 ip a
 
-## 2. Chỉnh Sửa Tệp Cấu Hình
+## 2. **Chỉnh Sửa Tệp Cấu Hình**
 Các cấu hình mạng được lưu trữ trong thư mục /etc/sysconfig/network-scripts/. Tệp cấu hình có tên theo định dạng ifcfg-<tên-cards-mạng>. Ví dụ: ifcfg-ens33.
 ```bash
 sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
