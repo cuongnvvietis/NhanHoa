@@ -4,19 +4,20 @@
 
 Đầu tiên, xác định tên của card mạng bạn muốn cấu hình:
 
-```text
+```bash
 ip a
+
 2. Chỉnh Sửa Tệp Cấu Hình
 Các cấu hình mạng được lưu trữ trong thư mục /etc/sysconfig/network-scripts/. Tệp cấu hình có tên theo định dạng ifcfg-<tên-cards-mạng>. Ví dụ: ifcfg-ens33.
 
 Chỉnh sửa hoặc tạo tệp cấu hình cho card mạng cụ thể:
-
-text
-Copy code
+```bash
 sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
+
 3. Cấu Hình Địa Chỉ IP Tĩnh
 Dưới đây là ví dụ về cấu hình địa chỉ IP tĩnh cho card mạng ens33:
 
+```bash
 ini
 Copy code
 DEVICE=ens33
@@ -36,6 +37,7 @@ IPADDR: Địa chỉ IP tĩnh.
 NETMASK: Mặt nạ mạng.
 GATEWAY: Địa chỉ IP của cổng mạng.
 DNS1 và DNS2: Địa chỉ DNS để phân giải tên miền.
+
 4. Khởi Động Lại Dịch Vụ Mạng
 Sau khi chỉnh sửa tệp cấu hình, khởi động lại dịch vụ mạng để áp dụng các thay đổi:
 
