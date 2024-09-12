@@ -26,7 +26,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
     sudo apt update
     sudo apt install scsitools
     sudo rescan-scsi-bus
-  ![Dell PERC Screen](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_6.png)
+ (https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_110.png)
   
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
 
