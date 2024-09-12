@@ -1,4 +1,4 @@
-# Hướng Dẫn Reset Mật Khẩu Tài Khoản Root trên CentOS 7
+# Hướng Dẫn Reset Mật Khẩu Tài Khoản Root trên CentOS 7, Rocky Linux, Amalinux
 
 Nếu bạn quên mật khẩu tài khoản root trên CentOS 7, bạn có thể thực hiện theo các bước sau để reset mật khẩu.
 
@@ -12,7 +12,8 @@ Nếu bạn quên mật khẩu tài khoản root trên CentOS 7, bạn có thể
 1. Trong menu GRUB, chọn phiên bản CentOS mà bạn muốn khởi động và nhấn phím `e` để chỉnh sửa.
 2. Tìm dòng bắt đầu bằng `linux16` hoặc `linux` (tùy thuộc vào hệ thống của bạn).
 3. Thêm `rd.break` vào cuối dòng đó. Điều này sẽ đưa bạn vào chế độ khôi phục.
-4. Nhấn `Ctrl + X` để khởi động.
+4. rd.break enforcing=0 (Với Rocklinux và Amalinux)
+5. Nhấn `Ctrl + X` để khởi động.
    ![Chỉnh sửa GRUB](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_98.png)
 
 ## Bước 3: Mount Hệ Thống
