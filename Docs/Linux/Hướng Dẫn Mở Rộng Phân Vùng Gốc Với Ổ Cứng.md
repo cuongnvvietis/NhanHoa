@@ -29,7 +29,6 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
    
        sudo fdisk /dev/sdb
-
 2. Trong `fdisk`, thực hiện các bước sau:
  - Nhấn `n` để tạo phân vùng mới.
  - Chọn kiểu phân vùng (primary hoặc logical).
@@ -41,7 +40,6 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 1. **Khởi Tạo Partition Mới Cho LVM**:
 
        sudo pvcreate /dev/sdb1
-
 2. **Thêm Physical Volume Vào Volume Group**:
 
  Xác định Volume Group hiện tại của bạn:
