@@ -26,7 +26,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
     sudo apt update
     sudo apt install scsitools
     sudo rescan-scsi-bus
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Raid/Screenshot_110.png)
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_110.png)
   
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
 
@@ -37,7 +37,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
    - Chọn kiểu phân vùng (primary hoặc logical).
    - Chấp nhận các giá trị mặc định hoặc nhập kích thước phân vùng bạn muốn (thường là toàn bộ ổ đĩa).
    - Nhấn `w` để lưu và thoát.
-
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_111.png)
 ## Thêm Phân Vùng Mới Vào Volume Group
 
 1. **Khởi Tạo Partition Mới Cho LVM**:
@@ -53,7 +53,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
    Thêm phân vùng mới vào Volume Group:
 
         sudo vgextend ubuntu-vg /dev/sdb1
-
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_112.png)
 ## Mở Rộng Logical Volume
 
 1. **Xác Định Logical Volume Hiện Tại**:
@@ -71,7 +71,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
    Hoặc nếu bạn chỉ muốn mở rộng thêm một kích thước cụ thể, ví dụ 5GB:
 
         sudo lvextend -L +5G /dev/ubuntu-vg/ubuntu-lv
-
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_113.png)
 ## Mở Rộng Hệ Thống Tệp
 
 1. **Sử Dụng `resize2fs` Để Mở Rộng Hệ Thống Tệp**:
@@ -83,7 +83,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
    Đối với hệ thống tệp `XFS` (nếu bạn đang sử dụng XFS):
 
         sudo xfs_growfs /
-
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_114.png)
 ## Kiểm Tra Kết Quả
 
 Sau khi hoàn tất, kiểm tra kích thước phân vùng gốc để đảm bảo rằng không gian đã được mở rộng thành công:
