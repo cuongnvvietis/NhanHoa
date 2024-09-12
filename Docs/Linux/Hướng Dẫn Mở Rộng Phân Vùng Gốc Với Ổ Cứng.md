@@ -20,73 +20,109 @@ Hướng dẫn này mô tả cách mở rộng phân vùng gốc (`/`) trên Ubu
 2. **Ổ Cứng Mới Được Kết Nối**: Đã được phát hiện dưới dạng `/dev/sdb`.
 
 ## Tạo Phân Vùng Mới Trên Ổ Cứng Mới
-Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt scsitools và thực hiện quét SCSI:
-   ```bash
-   sudo apt update
-   sudo apt install scsitools
-   sudo rescan-scsi-bus
-   sudo fdisk /dev/sdb
+
+Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
+
+sudo apt update 
+sudo apt install 
+scsitools sudo rescan-scsi-bus
+
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
-Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt scsitools và thực hiện quét SCSI:
 
-Nhấn n để tạo phân vùng mới.
-Chọn kiểu phân vùng (primary hoặc logical).
-Chấp nhận các giá trị mặc định hoặc nhập kích thước phân vùng bạn muốn (thường là toàn bộ ổ đĩa).
-Nhấn w để lưu và thoát.
-Thêm Phân Vùng Mới Vào Volume Group
-Khởi Tạo Partition Mới Cho LVM:
+sudo fdisk /dev/sdb
 
-bash
-Sao chép mã
+2. Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
+
+sudo apt update 
+sudo apt install 
+scsitools sudo rescan-scsi-bus
+
+3. Trong `fdisk`, thực hiện các bước sau:
+- Nhấn `n` để tạo phân vùng mới.
+- Chọn kiểu phân vùng (primary hoặc logical).
+- Chấp nhận các giá trị mặc định hoặc nhập kích thước phân vùng bạn muốn (thường là toàn bộ ổ đĩa).
+- Nhấn `w` để lưu và thoát.
+
+## Thêm Phân Vùng Mới Vào Volume Group
+
+1. **Khởi Tạo Partition Mới Cho LVM**:
+
 sudo pvcreate /dev/sdb1
-Thêm Physical Volume Vào Volume Group:
+
+less
+Sao chép mã
+
+2. **Thêm Physical Volume Vào Volume Group**:
 
 Xác định Volume Group hiện tại của bạn:
 
-bash
-Sao chép mã
 sudo vgdisplay
+
+css
+Sao chép mã
+
 Thêm phân vùng mới vào Volume Group:
 
-bash
-Sao chép mã
 sudo vgextend ubuntu-vg /dev/sdb1
-Mở Rộng Logical Volume
-Xác Định Logical Volume Hiện Tại:
+
+markdown
+Sao chép mã
+
+## Mở Rộng Logical Volume
+
+1. **Xác Định Logical Volume Hiện Tại**:
 
 Kiểm tra Logical Volume hiện tại:
 
-bash
-Sao chép mã
 sudo lvdisplay
-Mở Rộng Logical Volume:
 
-Sử dụng lvextend để mở rộng Logical Volume. Ví dụ: mở rộng Logical Volume ubuntu-lv trong Volume Group ubuntu-vg để sử dụng toàn bộ không gian mới:
-
-bash
+markdown
 Sao chép mã
+
+2. **Mở Rộng Logical Volume**:
+
+Sử dụng `lvextend` để mở rộng Logical Volume. Ví dụ: mở rộng Logical Volume `ubuntu-lv` trong Volume Group `ubuntu-vg` để sử dụng toàn bộ không gian mới:
+
 sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+
+css
+Sao chép mã
+
 Hoặc nếu bạn chỉ muốn mở rộng thêm một kích thước cụ thể, ví dụ 5GB:
 
-bash
-Sao chép mã
 sudo lvextend -L +5G /dev/ubuntu-vg/ubuntu-lv
-Mở Rộng Hệ Thống Tệp
-Sử Dụng resize2fs Để Mở Rộng Hệ Thống Tệp:
 
-Đối với hệ thống tệp ext4:
-
-bash
+less
 Sao chép mã
+
+## Mở Rộng Hệ Thống Tệp
+
+1. **Sử Dụng `resize2fs` Để Mở Rộng Hệ Thống Tệp**:
+
+Đối với hệ thống tệp `ext4`:
+
 sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
-Đối với hệ thống tệp XFS (nếu bạn đang sử dụng XFS):
 
-bash
+css
 Sao chép mã
+
+Đối với hệ thống tệp `XFS` (nếu bạn đang sử dụng XFS):
+
 sudo xfs_growfs /
-Kiểm Tra Kết Quả
+
+r
+Sao chép mã
+
+## Kiểm Tra Kết Quả
+
 Sau khi hoàn tất, kiểm tra kích thước phân vùng gốc để đảm bảo rằng không gian đã được mở rộng thành công:
 
-bash
-Sao chép mã
 df -h
+
+less
+Sao chép mã
+
+## Tài Liệu Tham Khảo
+
+- [Ubuntu Documentation: LVM](https://ubuntu.com/server/docs/lvm)
+- [LVM Howto](https://www.tldp.org/HOWTO/LVM-HOWTO/)
