@@ -29,7 +29,7 @@ scsitools sudo rescan-scsi-bus
 
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
    
-       sudo fdisk /dev/sdb
+sudo fdisk /dev/sdb
    
 3. Trong `fdisk`, thực hiện các bước sau:
  - Nhấn `n` để tạo phân vùng mới.
@@ -41,16 +41,16 @@ scsitools sudo rescan-scsi-bus
 
 1. **Khởi Tạo Partition Mới Cho LVM**:
 
-       sudo pvcreate /dev/sdb1
+sudo pvcreate /dev/sdb1
 2. **Thêm Physical Volume Vào Volume Group**:
 
  Xác định Volume Group hiện tại của bạn:
 
-      sudo vgdisplay
+  sudo vgdisplay
 
  Thêm phân vùng mới vào Volume Group:
 
-      sudo vgextend ubuntu-vg /dev/sdb1
+  sudo vgextend ubuntu-vg /dev/sdb1
 
 ## Mở Rộng Logical Volume
 
