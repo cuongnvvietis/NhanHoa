@@ -2,6 +2,7 @@
 
 ## 1. Xác định tên card mạng
 Đầu tiên, xác định tên của card mạng bạn muốn cấu hình:
+
 ```bash
 ip a
 
