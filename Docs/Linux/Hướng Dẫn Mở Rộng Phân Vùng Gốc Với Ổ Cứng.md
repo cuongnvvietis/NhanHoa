@@ -87,5 +87,5 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 
 Sau khi hoàn tất, kiểm tra kích thước phân vùng gốc để đảm bảo rằng không gian đã được mở rộng thành công:
 
-    df -h
+        df -h
 
