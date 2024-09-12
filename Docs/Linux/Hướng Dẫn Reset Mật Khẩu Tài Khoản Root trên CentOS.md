@@ -24,6 +24,8 @@ Nếu bạn quên mật khẩu tài khoản root trên CentOS 7, bạn có thể
    chroot /sysroot
    passwd
    touch /.autorelabel
+   rm -f /.autorelabel
+
    exit
    exit
 
