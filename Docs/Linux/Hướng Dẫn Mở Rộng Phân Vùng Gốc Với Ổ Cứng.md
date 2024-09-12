@@ -20,15 +20,15 @@ Hướng dẫn này mô tả cách mở rộng phân vùng gốc (`/`) trên Ubu
 2. **Ổ Cứng Mới Được Kết Nối**: Đã được phát hiện dưới dạng `/dev/sdb`.
 
 ## Tạo Phân Vùng Mới Trên Ổ Cứng Mới
-
-1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
 Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt scsitools và thực hiện quét SCSI:
    ```bash
-sudo apt update
-sudo apt install scsitools
-sudo rescan-scsi-bus
-   ```bash
+   sudo apt update
+   sudo apt install scsitools
+   sudo rescan-scsi-bus
    sudo fdisk /dev/sdb
+1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
+Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt scsitools và thực hiện quét SCSI:
+
 Nhấn n để tạo phân vùng mới.
 Chọn kiểu phân vùng (primary hoặc logical).
 Chấp nhận các giá trị mặc định hoặc nhập kích thước phân vùng bạn muốn (thường là toàn bộ ổ đĩa).
