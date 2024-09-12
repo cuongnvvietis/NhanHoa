@@ -29,7 +29,7 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
 
-    sudo fdisk /dev/sdb
+       sudo fdisk /dev/sdb
 
 2. Trong `fdisk`, thực hiện các bước sau:
    - Nhấn `n` để tạo phân vùng mới.
