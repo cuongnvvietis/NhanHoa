@@ -23,22 +23,21 @@ Hướng dẫn này mô tả cách mở rộng phân vùng gốc (`/`) trên Ubu
 
 Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
 
-      
-                  sudo apt update 
-                  sudo apt install 
-                  scsitools sudo rescan-scsi-bus
+      sudo apt update 
+      sudo apt install
+      scsitools sudo rescan-scsi-bus
 
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
 
-sudo fdisk /dev/sdb
+       sudo fdisk /dev/sdb
 
-2. Nếu ổ cứng mới không được phát hiện ngay lập tức, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
+3. Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
+      
+       sudo apt update 
+       sudo apt install
+       scsitools sudo rescan-scsi-bus
 
-sudo apt update 
-sudo apt install 
-scsitools sudo rescan-scsi-bus
-
-3. Trong `fdisk`, thực hiện các bước sau:
+4. Trong `fdisk`, thực hiện các bước sau:
 - Nhấn `n` để tạo phân vùng mới.
 - Chọn kiểu phân vùng (primary hoặc logical).
 - Chấp nhận các giá trị mặc định hoặc nhập kích thước phân vùng bạn muốn (thường là toàn bộ ổ đĩa).
@@ -47,27 +46,18 @@ scsitools sudo rescan-scsi-bus
 ## Thêm Phân Vùng Mới Vào Volume Group
 
 1. **Khởi Tạo Partition Mới Cho LVM**:
-
-sudo pvcreate /dev/sdb1
-
-less
-Sao chép mã
+   
+       sudo pvcreate /dev/sdb1
 
 2. **Thêm Physical Volume Vào Volume Group**:
 
 Xác định Volume Group hiện tại của bạn:
 
-sudo vgdisplay
-
-css
-Sao chép mã
+    sudo vgdisplay
 
 Thêm phân vùng mới vào Volume Group:
 
-sudo vgextend ubuntu-vg /dev/sdb1
-
-markdown
-Sao chép mã
+    sudo vgextend ubuntu-vg /dev/sdb1
 
 ## Mở Rộng Logical Volume
 
