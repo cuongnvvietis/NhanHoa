@@ -12,13 +12,13 @@
    sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
    DEVICE=ens33
-BOOTPROTO=static
-ONBOOT=yes
-IPADDR=192.168.1.100
-NETMASK=255.255.255.0
-GATEWAY=192.168.1.1
-DNS1=8.8.8.8
-DNS2=8.8.4.4
+   BOOTPROTO=static
+   ONBOOT=yes
+   IPADDR=192.168.1.100
+   NETMASK=255.255.255.0
+   GATEWAY=192.168.1.1
+   DNS1=8.8.8.8
+   DNS2=8.8.4.4
 
    sudo netplan apply
             
