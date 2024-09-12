@@ -22,13 +22,15 @@ Hướng dẫn này mô tả cách mở rộng phân vùng gốc (`/`) trên Ubu
 ## Tạo Phân Vùng Mới Trên Ổ Cứng Mới
 
 Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `scsitools` và thực hiện quét SCSI:
+
                      ```bash
   sudo apt update
   sudo apt install
   scsitools sudo rescan-scsi-bus
 
 1. **Mở Terminal** và sử dụng `fdisk` để tạo phân vùng mới:
-   
+
+         ```bash
 sudo fdisk /dev/sdb
    
 3. Trong `fdisk`, thực hiện các bước sau:
