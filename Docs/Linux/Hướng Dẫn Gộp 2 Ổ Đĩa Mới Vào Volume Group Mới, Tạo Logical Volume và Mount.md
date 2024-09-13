@@ -61,6 +61,7 @@ Ghi chú UUID và cập nhật file /etc/fstab:
 
 Lưu các thay đổi và kiểm tra cấu hình:
 
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_122.png)
 Xác Nhận
 Để kiểm tra, bạn có thể sử dụng các lệnh sau:
 
