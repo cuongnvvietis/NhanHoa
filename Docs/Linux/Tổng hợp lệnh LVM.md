@@ -39,7 +39,7 @@ Xóa Volume Group:
 ## 3. Quản lý Logical Volumes (LV)
 Tạo Logical Volume:
 
-    sudo lvcreate -n lv_name -L size vg_name
+    sudo lvcreate -n lv_name -L 31 vg_name
 Xem thông tin Logical Volume:
 
     sudo lvdisplay
