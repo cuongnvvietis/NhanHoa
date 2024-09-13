@@ -37,7 +37,9 @@ Thu hẹp Volume Group:
 
     sudo vgreduce vg_name /dev/sdX
 Xóa Volume Group:
-    sudo vgremove vg_name
+
+        sudo vgremove vg_name
+    
 ## 3. Quản lý Logical Volumes (LV)
 Tạo Logical Volume:
 
