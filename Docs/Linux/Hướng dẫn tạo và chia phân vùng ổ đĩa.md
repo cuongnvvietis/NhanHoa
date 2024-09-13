@@ -59,3 +59,18 @@ Cuối cùng, mount từng phân vùng vào hệ thống để sử dụng:
 Kiểm tra bằng lệnh df -h để đảm bảo các phân vùng đã được mount thành công.
 
     df -h
+    
+# Bước 7: Cấu hình fstab để tự động mount
+
+Mở file /etc/fstab bằng trình soạn thảo văn bản mà bạn chọn, ví dụ nano:
+
+        sudo nano /etc/fstab
+        
+Thêm dòng tương ứng cho từng phân vùng để đảm bảo chúng tự động được mount khi khởi động lại. Cú pháp của file fstab như sau:
+
+    /dev/sdd1    /mnt/sdd1    ext4    defaults    0  0
+    /dev/sdd2    /mnt/sdd2    ext4    defaults    0  0
+    /dev/sdd3    /mnt/sdd3    ext4    defaults    0  0
+    /dev/sdd4    /mnt/sdd4    ext4    defaults    0  0
+
+Lưu và thoát (trong nano, bạn có thể nhấn Ctrl+O để lưu và Ctrl+X để thoát).
