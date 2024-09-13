@@ -89,4 +89,4 @@ Nếu ổ cứng mới không được phát hiện, bạn cần cài đặt `sc
 Sau khi hoàn tất, kiểm tra kích thước phân vùng gốc để đảm bảo rằng không gian đã được mở rộng thành công:
 
         df -h
-
+## Kiểm tra lại file fstab xem thư mục / đã có trong chưa, nếu chưa thì thực hành điền vào file fstab
