@@ -7,12 +7,14 @@
 1. Nhấn `Windows Key + X` hoặc chuột phải vào nút `Start` (Bắt đầu).
 2. Chọn `Disk Management` (Quản lý Đĩa) từ menu.
 
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_125.png)
 ### **b. Rút Ngắn Phân Vùng Hiện Tại**
 
 1. Trong Disk Management, nhấn chuột phải vào phân vùng bạn muốn rút ngắn (ví dụ: ổ đĩa C:).
 2. Chọn `Shrink Volume` (Rút ngắn phân vùng).
 3. Nhập kích thước mà bạn muốn giảm phân vùng (ví dụ: giảm 10 GB).
 4. Nhấn `Shrink` (Rút ngắn) để hoàn tất. Phần không gian vừa được rút ngắn sẽ xuất hiện dưới dạng "Unallocated" (Chưa phân bổ).
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_125.png)
 
 ### **c. Tạo Phân Vùng Mới**
 
@@ -24,6 +26,7 @@
    - Chọn định dạng hệ thống tệp (NTFS hoặc ReFS).
    - Đặt tên cho phân vùng nếu cần.
 4. Nhấn `Finish` (Hoàn tất) để tạo phân vùng mới.
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_125.png)
 
 ## 2. Thêm Ổ Cứng Mới
 
