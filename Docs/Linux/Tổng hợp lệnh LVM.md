@@ -24,7 +24,7 @@ Xóa Physical Volume:
 ## 2. Quản lý Volume Groups (VG)
 Tạo Volume Group:
 
-    sudo vgcreate vg_name /dev/sdX
+    sudo vgcreate vg_name /dev/sdx1
 Xem thông tin Volume Group:
 
     sudo vgdisplay
