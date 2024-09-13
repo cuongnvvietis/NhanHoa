@@ -12,7 +12,7 @@
 
 Đảm bảo rằng bạn đã có hai ổ đĩa mới (`/dev/sdb` và `/dev/sdc`) đã được thêm vào hệ thống của bạn.
 
-![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_101.png)
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_116.png)
 
 ## 2. Tạo Physical Volume (PV)
 
@@ -21,30 +21,33 @@ Chạy các lệnh sau để tạo PV trên hai ổ đĩa mới:
     sudo pvcreate /dev/sdb
     sudo pvcreate /dev/sdc
 
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_101.png)
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_117.png)
  
 ## 3. Tạo Volume Group (VG)
 
 Tạo một Volume Group mới với tên là vg_nhanhoa:
 
     sudo vgcreate vg_nhanhoa /dev/sdb /dev/sdc
+
+  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_118.png)
   
 ## 4. Tạo Logical Volume (LV)
 
 Tạo một Logical Volume mới với tên là lv_nhanhoa từ Volume Group vg_nhanhoa. Giả sử bạn muốn sử dụng toàn bộ dung lượng của VG:
 
     sudo lvcreate -l 100%FREE -n lv_nhanhoa vg_nhanhoa
-    
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_119.png)    
+ 
 ## 5. Tạo Hệ Thống Tập Tin trên LV và Mount
 Trước khi mount, bạn cần định dạng Logical Volume mới với hệ thống tập tin ext4:
 
     sudo mkfs.ext4 /dev/vg_nhanhoa/lv_nhanhoa
-    
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_120.png)   
 Tạo điểm mount /nhanhoa và mount Logical Volume vào điểm này:
 
     sudo mkdir /nhanhoa
     sudo mount /dev/vg_nhanhoa/lv_nhanhoa /nhanhoa
-    
+
 ## 6. Cập Nhật /etc/fstab
 
 Để tự động mount LV vào /nhanhoa sau khi khởi động lại hệ thống, bạn cần cập nhật file /etc/fstab. Trước tiên, lấy UUID của Logical Volume:
@@ -58,10 +61,9 @@ Ghi chú UUID và cập nhật file /etc/fstab:
 
 Lưu các thay đổi và kiểm tra cấu hình:
 
-    sudo mount -a
-
 Xác Nhận
 Để kiểm tra, bạn có thể sử dụng các lệnh sau:
 
     lsblk
     df -h
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Reset%20Password/Screenshot_122.png)
