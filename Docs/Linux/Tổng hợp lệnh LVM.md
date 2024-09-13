@@ -1,6 +1,10 @@
 # Hướng dẫn Quản lý Logical Volume Manager (LVM) trên Linux
 
 Trong hướng dẫn này, bạn sẽ tìm thấy các câu lệnh cơ bản và phổ biến để quản lý LVM trên Linux.
+        
+    sudo apt update
+    sudo apt install scsitools
+    sudo rescan-scsi-bus
 
 ## 1. Quản lý Physical Volumes (PV)
 Tạo Physical Volume:
