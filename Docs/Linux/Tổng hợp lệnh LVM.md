@@ -5,6 +5,9 @@ Trong hướng dẫn này, bạn sẽ tìm thấy các câu lệnh cơ bản và
     sudo apt update
     sudo apt install scsitools
     sudo rescan-scsi-bus
+    sudo resize2fs /dev/mapper/vg_data-lv_data (Khi lsblk nhận mà df-h không nhận)
+    sudo xfs_growfs / (Khi lsblk nhận mà df-h không nhận)
+
 
 ## 1. Quản lý Physical Volumes (PV)
 Tạo Physical Volume:
