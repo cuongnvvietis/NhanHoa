@@ -6,6 +6,7 @@ Trong hướng dẫn này, bạn sẽ học cách chia một ổ đĩa (ví dụ
 
 Trước khi bắt đầu chia phân vùng, bạn cần kiểm tra ổ đĩa để biết tình trạng các phân vùng hiện có:
 
+```bash
 sudo fdisk -l /dev/sdd
               
 Lệnh này sẽ hiển thị danh sách các phân vùng trên ổ đĩa /dev/sdd.
@@ -19,8 +20,6 @@ sudo fdisk /dev/sdd
 Nhấn d để xóa từng phân vùng. Lặp lại cho đến khi tất cả các phân vùng đã bị xóa.
 Sau khi xóa các phân vùng, kiểm tra lại để chắc chắn ổ đĩa trống:
 
-bash
-Copy code
 Command (m for help): p
 Bước 3: Tạo các phân vùng mới
 Tạo phân vùng sdd1 với 5GB:
