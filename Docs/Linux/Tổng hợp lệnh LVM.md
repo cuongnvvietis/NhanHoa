@@ -9,6 +9,8 @@ Trong hướng dẫn này, bạn sẽ tìm thấy các câu lệnh cơ bản và
     sudo mount /dev/sxxx /data
     sudo resize2fs /dev/mapper/vg_data-lv_data (Khi lsblk nhận mà df-h không nhận)
     sudo xfs_growfs / (Khi lsblk nhận mà df-h không nhận)
+    UUID=c780f3bc-9ab5-4a4a-a243-99083c7ea7e8  /data  ext4  defaults  0  2
+
 
 
 ## 1. Quản lý Physical Volumes (PV)
