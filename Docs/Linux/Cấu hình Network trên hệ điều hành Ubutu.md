@@ -29,6 +29,16 @@
             - 8.8.4.4
 
    sudo netplan apply
+2. **Cấu hình DHCP**
+   ```bash
+   sudo nano /etc/netplan/01-netcfg.yaml
+   
+   network:
+   version: 2
+   ethernets:
+    eth0:
+      dhcp4: true
+
    
 
 
