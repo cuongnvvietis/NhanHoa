@@ -7,8 +7,8 @@
 1. **Tạo Tập Tin Cấu Hình `network-scripts`**
 
    Các cấu hình mạng được lưu trữ trong thư mục /etc/sysconfig/network-scripts/. Tệp cấu hình có tên theo định dạng ifcfg-<tên-cards-mạng>. Ví dụ: ifcfg-ens33
-
-         sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
+   ```bash
+   sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
    DEVICE=ens33
    BOOTPROTO=static
@@ -19,12 +19,12 @@
    DNS1=8.8.8.8
    DNS2=8.8.4.4
 
-         sudo systemctl restart network
+   sudo systemctl restart network
             
 2. **Tạo Tập Tin Cấu Hình `network-scripts`** DHCP
-
-      BOOTPROTO=dhcp
-      ONBOOT=yes
-      DEVICE=eth0
+   ```bash
+   BOOTPROTO=dhcp
+   ONBOOT=yes
+   DEVICE=eth0
    
 sudo systemctl restart network
