@@ -10,21 +10,21 @@
 
          sudo vi /etc/sysconfig/network-scripts/ifcfg-ens33
 
-   DEVICE=ens33
-   BOOTPROTO=static
-   ONBOOT=yes
-   IPADDR=192.168.1.100
-   NETMASK=255.255.255.0
-   GATEWAY=192.168.1.1
-   DNS1=8.8.8.8
-   DNS2=8.8.4.4
+      DEVICE=ens33
+      BOOTPROTO=static
+      ONBOOT=yes
+      IPADDR=192.168.1.100
+      NETMASK=255.255.255.0
+      GATEWAY=192.168.1.1
+      DNS1=8.8.8.8
+      DNS2=8.8.4.4
 
          sudo systemctl restart network
             
 2. **Tạo Tập Tin Cấu Hình `network-scripts`** DHCP
 
-   BOOTPROTO=dhcp
-   ONBOOT=yes
-   DEVICE=eth0
+      BOOTPROTO=dhcp
+      ONBOOT=yes
+      DEVICE=eth0
    
 sudo systemctl restart network
