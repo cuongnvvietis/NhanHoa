@@ -71,8 +71,6 @@
     
   Ping thử từ máy tính cùng Vlan tới 2 IP 
 
-   ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_136.png) 
+   ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_138.png) 
 
- Ping thử ra internet và traceroute
- 
-  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_137.png) 
+
