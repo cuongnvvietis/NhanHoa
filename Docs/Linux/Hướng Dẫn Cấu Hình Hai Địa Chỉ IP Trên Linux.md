@@ -1,4 +1,4 @@
-# Hướng Dẫn Cấu Hình Hai Địa Chỉ IP Trên Một Card Mạng Cùng VLAN 
+# Hướng Dẫn Cấu Hình Hai Địa Chỉ IP Trên Một Card Mạng Cùng VLAN trên Linux
 
 ## Mục Lục
 
@@ -51,5 +51,6 @@ Hướng dẫn này cung cấp cách cấu hình hai địa chỉ IP cho một c
     GATEWAY=172.16.10.1
     DNS1=8.8.8.8
     DNS2=8.8.4.4
-
+    
+   systemcrt restart network   
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_133.png) 
