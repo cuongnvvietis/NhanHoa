@@ -42,7 +42,7 @@ Xóa Volume Group:
         sudo vgremove vg_name
 Move dữ liệu
 
-        sudo vgreduce vg_data /dev/sdf
+        sudo pvmove /dev/sdf /dev/sdg
 
 ## 3. Quản lý Logical Volumes (LV)
 Tạo Logical Volume:
