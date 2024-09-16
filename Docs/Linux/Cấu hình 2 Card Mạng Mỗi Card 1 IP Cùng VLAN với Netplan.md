@@ -38,5 +38,11 @@ Hướng dẫn này mô tả cách cấu hình hai địa chỉ IP trên hai car
 ## 3. Kiểm Tra Cấu Hình
 
     ip addr show
+    
+  Ping thử từ máy tính bên ngoài tới 2 IP 
 
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_136.png) 
+   ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_136.png) 
+
+ Ping thử ra internet và traceroute
+ 
+  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_137.png) 
