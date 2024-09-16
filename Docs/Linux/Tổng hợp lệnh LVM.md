@@ -34,13 +34,16 @@ Xem thông tin Volume Group:
 Mở rộng Volume Group:
 
     sudo vgextend vg_name /dev/sdX
-Thu hẹp Volume Group:
+Xóa ổ khỏi Volume Group:
 
     sudo vgreduce vg_name /dev/sdX
 Xóa Volume Group:
 
         sudo vgremove vg_name
-    
+Move dữ liệu
+
+        sudo vgreduce vg_data /dev/sdf
+
 ## 3. Quản lý Logical Volumes (LV)
 Tạo Logical Volume:
 
