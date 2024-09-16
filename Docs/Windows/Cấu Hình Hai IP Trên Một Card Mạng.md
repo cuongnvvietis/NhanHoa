@@ -1,0 +1,37 @@
+# Cấu Hình Hai IP Trên Một Card Mạng Trong Windows Server 2019
+
+Trong Windows Server 2019, bạn có thể cấu hình hai địa chỉ IP trên cùng một card mạng để sử dụng cho nhiều mạng IP khác nhau. Dưới đây là các bước chi tiết để thực hiện cấu hình này.
+
+## Bước 1: Mở Network Connections
+
+1. Nhấn `Windows + R` để mở hộp thoại **Run**.
+2. Gõ `ncpa.cpl` và nhấn **Enter** để mở **Network Connections**.
+
+## Bước 2: Chọn Card Mạng
+
+1. Trong danh sách các kết nối mạng, nhấp chuột phải vào card mạng mà bạn muốn cấu hình và chọn **Properties**.
+
+## Bước 3: Cấu Hình IP
+
+1. Trong cửa sổ **Properties**, chọn **Internet Protocol Version 4 (TCP/IPv4)** và nhấp vào **Properties**.
+
+2. Trong cửa sổ **Internet Protocol Version 4 (TCP/IPv4) Properties**, chọn **Use the following IP address**.
+
+3. Nhập địa chỉ IP đầu tiên, **Subnet mask**, và **Default gateway** (nếu cần).
+
+4. Nhấp vào **Advanced** để mở cửa sổ **Advanced TCP/IP Settings**.
+
+## Bước 4: Thêm Địa Chỉ IP Thứ Hai
+
+1. Trong cửa sổ **Advanced TCP/IP Settings**, chọn tab **IP Settings**.
+
+2. Nhấp vào **Add** trong phần **IP addresses**.
+
+3. Nhập địa chỉ IP thứ hai và **Subnet mask**.
+
+4. Nhấn **Add** để lưu địa chỉ IP thứ hai.
+
+5. Nhấn **OK** để đóng tất cả các cửa sổ cấu hình.
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_140.png)
+
