@@ -33,9 +33,10 @@ Hướng dẫn này mô tả cách cấu hình hai địa chỉ IP trên hai car
 
 ## 2. Áp Dụng Cấu Hình
 
-  sudo netplan apply
+    sudo netplan apply
 
 ## 3. Kiểm Tra Cấu Hình
-  ip addr show
+
+    ip addr show
 
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Network/Screenshot_136.png) 
