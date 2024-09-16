@@ -5,6 +5,7 @@ Trong hướng dẫn này, bạn sẽ tìm thấy các câu lệnh cơ bản và
     sudo apt update
     sudo apt install scsitools
     sudo rescan-scsi-bus
+    echo "- - -" | sudo tee /sys/class/scsi_host/host*/scan
     sudo mkfs.ext4 /dev/sdd1
     sudo mount /dev/sxxx /data
     sudo resize2fs /dev/mapper/vg_data-lv_data (Khi lsblk nhận mà df-h không nhận)
