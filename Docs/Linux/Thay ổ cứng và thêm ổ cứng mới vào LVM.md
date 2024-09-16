@@ -22,7 +22,7 @@
 
     sudo vgextend vg_name /dev/sdX  # Thay vg_name bằng tên Volume Group và sdX bằng tên ổ cứng mới.  
     
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_141.png)
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_141.png)
  
 ### Bước 5: Di dời dữ liệu từ ổ cứng cũ (nếu cần)
     Nếu ổ cứng cũ là một phần của Volume Group, bạn cần phải di dời dữ liệu ra khỏi nó trước khi thay thế. Sử dụng pvmove để di chuyển dữ liệu:
