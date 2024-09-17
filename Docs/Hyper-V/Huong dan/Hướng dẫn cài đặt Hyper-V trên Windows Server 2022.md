@@ -1,0 +1,67 @@
+# Hướng dẫn cài đặt Hyper-V trên Windows Server 2022 
+
+Hyper-V là công nghệ ảo hóa được tích hợp sẵn trong Windows Server 2022, giúp bạn dễ dàng tạo và quản lý các máy ảo. Bài viết này hướng dẫn cài đặt Hyper-V bằng giao diện đồ họa thông qua **Server Manager**, mà không cần sử dụng PowerShell.
+
+## Yêu cầu hệ thống
+
+Trước khi bắt đầu, đảm bảo rằng máy chủ của bạn đáp ứng các yêu cầu sau:
+
+- **Bộ vi xử lý**: CPU hỗ trợ ảo hóa phần cứng (Intel VT-x hoặc AMD-V).
+- **Hỗ trợ SLAT (Second Level Address Translation)**.
+- **Virtualization**: Đã bật ảo hóa trong BIOS/UEFI.
+- **Data Execution Prevention (DEP)**: Đã được kích hoạt.
+
+## Bước 1: Bật ảo hóa trong BIOS/UEFI
+
+1. Khởi động lại máy chủ và vào BIOS/UEFI (thường nhấn phím **Delete**, **F2**, hoặc **Esc** khi máy khởi động).
+2. Tìm và bật ảo hóa:
+   - Với CPU Intel: Bật **Intel VT-x**.
+   - Với CPU AMD: Bật **AMD-V**.
+3. Kích hoạt **Data Execution Prevention (DEP)** (nếu cần).
+4. Lưu cài đặt và khởi động lại máy chủ.
+
+## Bước 2: Cài đặt Hyper-V thông qua Server Manager
+
+1. **Mở Server Manager**:
+   - Nhấp vào **Start Menu** và chọn **Server Manager**.
+   
+2. **Chọn Add roles and features**:
+   - Trong Server Manager, nhấp vào **Manage** ở góc trên cùng bên phải.
+   - Chọn **Add roles and features**.
+
+3. **Chọn loại cài đặt**:
+   - Ở cửa sổ **Before You Begin**, nhấn **Next**.
+   - Chọn **Role-based or feature-based installation**, rồi nhấn **Next**.
+
+4. **Chọn máy chủ đích**:
+   - Tại cửa sổ **Select destination server**, chọn máy chủ bạn muốn cài đặt Hyper-V.
+   - Nhấn **Next** để tiếp tục.
+
+5. **Chọn vai trò Hyper-V**:
+   - Cuộn xuống và tìm mục **Hyper-V**. 
+   - Đánh dấu chọn **Hyper-V** và nhấn **Next**.
+   - Một hộp thoại sẽ xuất hiện yêu cầu thêm các tính năng cần thiết. Nhấn **Add Features** để tiếp tục.
+
+6. **Chọn tính năng bổ sung**:
+   - Tại cửa sổ **Select features**, bạn có thể bỏ qua (giữ nguyên cài đặt mặc định) và nhấn **Next**.
+
+7. **Cấu hình Virtual Switch**:
+   - Chọn card mạng mà bạn muốn sử dụng cho Hyper-V.
+   - Nếu không chắc chắn hoặc muốn cấu hình sau, bạn có thể để trống và nhấn **Next**.
+
+8. **Quản lý Live Migration** (tùy chọn):
+   - Tại cửa sổ **Virtual Machine Migration**, bạn có thể chọn hoặc bỏ qua cài đặt **Live Migration** nếu không cần sử dụng.
+   - Nhấn **Next** để tiếp tục.
+
+9. **Chọn vị trí lưu trữ**:
+   - Tại cửa sổ **Default Stores**, chọn thư mục nơi sẽ lưu trữ các ổ đĩa ảo và các tệp cấu hình của máy ảo.
+   - Bạn có thể để mặc định hoặc thay đổi theo nhu cầu, sau đó nhấn **Next**.
+
+10. **Xác nhận cài đặt**:
+    - Tại cửa sổ **Confirmation**, xem lại tất cả các cài đặt.
+    - Nhấn **Install** để bắt đầu quá trình cài đặt.
+
+11. **Khởi động lại máy chủ**:
+    - Sau khi quá trình cài đặt hoàn tất, bạn sẽ được yêu cầu khởi động lại máy chủ.
+    - Nhấn **Restart** để khởi động lại.
+
