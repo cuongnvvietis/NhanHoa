@@ -63,6 +63,7 @@
        ```bash
    sudo vgextend vg_cuongnv /dev/sdY
     ```
+    
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_142.png)
  
 ### Bước 6: Gỡ bỏ ổ cứng cũ khỏi Volume Group
