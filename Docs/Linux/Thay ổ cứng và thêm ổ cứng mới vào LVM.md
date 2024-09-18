@@ -65,7 +65,13 @@
     ```
     
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_142.png)
- 
+
+- Giảm kích thước Logical Volume: Nếu có thể, giảm kích thước của Logical Volume để dữ liệu có thể vừa với ổ đích trong trường hợp ổ mới không đủ dung lượng với ổ thay thế. Sử dụng lvreduce để giảm kích thước Logical Volume:
+    ```bash
+    sudo lvreduce -L [kích thước] /dev/vg_cuongnv/lv_cuongnv
+    
+Chú ý: Trước khi giảm kích thước, hãy chắc chắn sao lưu dữ liệu quan trọng.
+
 ### Bước 6: Gỡ bỏ ổ cứng cũ khỏi Volume Group
 
     sudo vgreduce vg_name /dev/sdx  # Thay vg_name bằng tên Volume Group.
