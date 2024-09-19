@@ -1,0 +1,44 @@
+# Hướng Dẫn Tạo Script Sao Lưu Máy Ảo Trên Hyper-V Với Đường Dẫn Cụ Thể
+
+## Giới Thiệu
+Bài viết này hướng dẫn cách tạo PowerShell script sao lưu một máy ảo trên Hyper-V bằng cách chỉ định tên máy ảo và đường dẫn sao lưu cụ thể. Script này giúp tự động hóa quá trình sao lưu máy ảo và lưu kết quả vào một thư mục với dấu thời gian.
+
+## Yêu Cầu
+- Hyper-V đã được cài đặt và chạy trên máy chủ.
+- PowerShell phiên bản 5.1 trở lên.
+- Đường dẫn lưu trữ backup có dung lượng đủ lớn để chứa các bản sao lưu.
+
+## Cấu Trúc Script
+
+    ```powershell
+    # Định nghĩa tên máy ảo và đường dẫn sao lưu
+    $vmName = "Ubutu22-04-8Core-8GB-20GB"
+    $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $backupPath = "G:\Backup-vm\$vmName-$timestamp"
+
+    # Tạo thư mục sao lưu nếu chưa có
+    New-Item -Path $backupPath -ItemType Directory -Force | Out-Null
+  
+    # Bắt đầu sao lưu máy ảo
+    Write-Output "Bắt đầu sao lưu máy ảo $vmName..."
+    Export-VM -Name $vmName -Path $backupPath
+
+    # Kiểm tra kích thước của thư mục sao lưu
+    $backupSize = (Get-ChildItem -Path $backupPath -Recurse | Measure-Object -Property Length -Sum).Sum
+    Write-Output "Thư mục sao lưu đã được tạo tại: $backupPath (Size: $($backupSize / 1MB) MB)"
+    ```
+viết hướng dẫn các bước chi tiết theo như này
+Lưu script này vào một file .ps1 (ví dụ: backup-vm.ps1).
+
+## Bước 5: Thiết Lập Lịch Sao Lưu (Tùy Chọn)
+
+Bạn có thể sử dụng Task Scheduler trên Windows để tự động chạy script theo lịch, ví dụ hàng ngày vào lúc 12 giờ đêm.
+
+Mở Task Scheduler.
+Chọn Create Task.
+Đặt tên cho task, ví dụ: Hyper-V VM Backup.
+Ở tab Triggers, chọn New để thiết lập thời gian chạy (ví dụ: hàng sáng vào 6h00).
+Ở tab Actions, chọn Start a Program và trỏ đến file script backup-vm.ps1.
+Nhấn OK để lưu lại.
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/Hyper-v/Screenshot_39.png)
