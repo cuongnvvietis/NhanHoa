@@ -30,9 +30,10 @@
 
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_48.png)
 
-### Bước 6: Di dời dữ liệu từ ổ cứng cũ (Cách 1)
+### Bước 6: Di dời dữ liệu từ ổ cứng cũ
     
-   sudo pvmove /dev/sdb /dev/sdd
+   sudo pvmove /dev/sdb /dev/sdd (Move toàn bộ dữ liệu sang PV đích)
+   sudo pvmove /dev/sdb (Move toàn bộ dữ liệu trên PV khác)
     
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_49.png)
 
