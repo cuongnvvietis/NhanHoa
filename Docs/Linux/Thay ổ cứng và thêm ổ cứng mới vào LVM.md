@@ -18,64 +18,40 @@
     
 ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_141.png)
 
-### Bước 4: Thêm ổ cứng mới vào Volume Group (Nếu sử dụng lệnh pvmove /dev/sdX theo trường hợp 1)
+### Bước 4: Thêm ổ cứng mới vào Volume Group 
 
     sudo vgextend vg_name /dev/sdX  # Thay vg_name bằng tên Volume Group và sdX bằng tên ổ cứng mới.  
     
  ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_141.png)
+
+### Bước 5: Giả lập thư mục /cuongnv sử dụng full disk bằng lệnh: 
+
+    dd if=/dev/zero of=/cuongnv/tenfile bs=1G count=5
+
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_48.png)
+
+### Bước 6: Di dời dữ liệu từ ổ cứng cũ (Cách 1)
+    
+   sudo pvmove /dev/sdb /dev/sdd
+    
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_49.png)
+
+ ### Bước 7: Gỡ bỏ ổ cứng cũ khỏi Volume Group
+         vgreduce vg_cuongnv /dev/sdb
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_50.png)        
+### Bước 8: Mở rộng phân vùng lv bằng lệnh sau:
+        lvextend -l +100%FREE /dev/vg_cuongnv/lv_cuongnv
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_52.png)
+### Bước 9: Thay đổi kích thước của filesystem trên một logical volume và Kiểm tra lại bằng lệnh df-h
+        resize2fs /dev/mapper/vg_cuongnv/lv_cuongnv
+ ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Disk/Screenshot_53.png)
+
  
-### Bước 5: Di dời dữ liệu từ ổ cứng cũ (nếu cần)
-    
-   Nếu ổ cứng cũ là một phần của Volume Group, bạn cần phải di dời dữ liệu ra khỏi nó trước khi thay thế. Sử dụng `pvmove` để di chuyển dữ liệu:
-
-   **1. Di dời dữ liệu từ ổ cứng cũ (không chỉ định ổ đích)**
-
-   - **Khi sử dụng:**
-     - Khi bạn muốn di dời dữ liệu từ ổ cứng cũ sang các ổ cứng khác trong cùng một Volume Group.
-     - Khi bạn không cần chỉ định ổ đích cụ thể cho việc di dời dữ liệu.
-     - Khi bạn đã có đủ dung lượng trống trên các ổ cứng còn lại trong Volume Group để chứa dữ liệu từ ổ cứng cũ.
-
-   - **Lệnh:**
-     ```bash
-     sudo pvmove /dev/sdX  # Thay sdX bằng tên ổ cứng cũ.
-     ```
-
-   - **Ví dụ sử dụng:**
-     - Bạn có một ổ cứng cũ sắp bị thay thế và muốn di dời dữ liệu sang các ổ cứng khác có sẵn trong Volume Group mà không cần thêm ổ cứng mới.
-
-
-   **2. Di dời dữ liệu đến ổ đích**
-
-   - **Khi sử dụng:**
-     - Khi bạn có một ổ cứng đích mới và muốn di dời dữ liệu từ ổ cứng cũ sang ổ cứng đích này.
-     - Khi bạn muốn chỉ định rõ ràng ổ đích nơi dữ liệu từ ổ cứng cũ sẽ được di dời.
-     - Khi bạn đã thêm ổ đích mới vào Volume Group và đảm bảo rằng ổ đích có đủ dung lượng trống để chứa dữ liệu từ ổ cứng cũ.
-
-   - **Lệnh:**
-     ```bash
-     sudo pvmove /dev/sdX /dev/sdY
-     ```
-
-   - **Ví dụ sử dụng:**
-     - Bạn muốn di dời dữ liệu từ ổ cứng cũ sang một ổ cứng mới (ổ đích) để thay thế ổ cứng cũ. Đây là trường hợp khi bạn cần đảm bảo dữ liệu được di dời sang một ổ cứng cụ thể.
-
-   **Thêm ổ đích vào Volume Group:**
-       ```bash
-   sudo vgextend vg_cuongnv /dev/sdY
-    ```
-    
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_142.png)
-
 - Giảm kích thước Logical Volume: Nếu có thể, giảm kích thước của Logical Volume để dữ liệu có thể vừa với ổ đích trong trường hợp ổ mới không đủ dung lượng với ổ thay thế. Sử dụng lvreduce để giảm kích thước Logical Volume:
     ```bash
     sudo lvreduce -L [kích thước] /dev/vg_cuongnv/lv_cuongnv
     
 Chú ý: Trước khi giảm kích thước, hãy chắc chắn sao lưu dữ liệu quan trọng.
 
-### Bước 6: Gỡ bỏ ổ cứng cũ khỏi Volume Group
 
-    sudo vgreduce vg_name /dev/sdx  # Thay vg_name bằng tên Volume Group.
-    
- ![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Esxi/Picture/Add%20Storage/Screenshot_143.png) 
 
-### Bước7. Kiểm tra lại
