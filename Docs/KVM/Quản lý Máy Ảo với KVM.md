@@ -24,7 +24,5 @@ Nếu muốn xóa cả đĩa ảo (disk), sử dụng thêm tham số --remove-a
     virsh console <vm-name>
 Nếu gặp lỗi "Active console session exists", có thể khởi động lại dịch vụ hoặc kiểm tra các phiên điều khiển đang mở.
 ## 9. Tạm dừng và tiếp tục máy ảo
-Tạm dừng máy ảo:
     virsh suspend <vm-name>
-Tiếp tục máy ảo sau khi tạm dừng:
     virsh resume <vm-name>
