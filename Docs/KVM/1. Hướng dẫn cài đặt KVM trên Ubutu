@@ -26,3 +26,5 @@ sudo systemctl status libvirtd
 Add Your User to the KVM and Libvirt Group
 sudo usermod -aG kvm $USER
 sudo usermod -aG libvirt $USER
+
+sudo apt install virt-manager
