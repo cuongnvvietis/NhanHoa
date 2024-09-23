@@ -1,1 +1,1 @@
-virsh domjobinfo <vm-name>
+    virsh domjobinfo <vm-name>
