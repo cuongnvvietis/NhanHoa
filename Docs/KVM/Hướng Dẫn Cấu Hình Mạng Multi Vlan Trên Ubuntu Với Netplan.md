@@ -57,3 +57,23 @@ Sau khi chỉnh sửa xong, lưu file và áp dụng cấu hình bằng lệnh:
 Để kiểm tra trạng thái mạng, bạn có thể sử dụng lệnh:
 
     ip a
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_57.png) 
+
+## 5. Cấu hình cho máy ảo nhận Vlan
+
+Connect tới các máy ảo bằng lệnh 
+
+        virt-manager
+Sau khi connect xong vào setting chọn card mạng là Bridge 10 hoặc Bridge 11 đã tạo ở đầu
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_58.png) 
+
+## 6. Cấu hình IP cho máy ảo 
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_59.png) 
+
+## 7. Kiểm tra
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_55.png) 
+
