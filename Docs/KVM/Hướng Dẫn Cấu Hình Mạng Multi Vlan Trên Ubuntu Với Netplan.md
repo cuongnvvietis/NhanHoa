@@ -46,6 +46,9 @@ Dán cấu hình sau vào file:
           routes:
             - to: 10.10.11.0/24
               via: 10.10.11.1
+
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_56.png) 
+
 ## 3. Áp Dụng Cấu Hình
 Sau khi chỉnh sửa xong, lưu file và áp dụng cấu hình bằng lệnh:
 
