@@ -47,3 +47,7 @@
 - **Chuyển đổi từ RAW sang QCOW2**:
   ```bash
   qemu-img convert -f raw -O qcow2 input.raw output.qcow2
+ - **Chuyển đổi từ QCOW2 sang RAW**:
+   ```bash
+   qemu-img convert -f qcow2 -O raw input.qcow2 output.raw
+
