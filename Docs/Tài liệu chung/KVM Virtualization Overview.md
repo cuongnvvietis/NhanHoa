@@ -68,7 +68,9 @@ Virt-Manager là một giao diện đồ họa sử dụng libvirt để quản 
 
 ### 8. KVM Switches
 KVM cũng cung cấp khả năng chuyển đổi nhanh giữa các máy ảo bằng cách sử dụng các công cụ dòng lệnh hoặc giao diện quản lý, cho phép người quản trị chuyển đổi nhanh chóng giữa các máy ảo đang chạy.
+---
 
+Tóm lại, các thành phần chính của KVM bao gồm nhân Linux, module KVM, QEMU, Virtio, libvirt, và Virt-Manager, kết hợp lại để cung cấp khả năng ảo hóa toàn diện và hiệu quả cho các máy chủ Linux.
 
 ## Mối Quan Hệ Của KVM Với Hệ Điều Hành (OS)
 
@@ -95,7 +97,4 @@ KVM (Kernel-based Virtual Machine) có mối quan hệ chặt chẽ với hệ �
 ### Tóm tắt
 KVM có mối quan hệ sâu sắc với hệ điều hành Linux, hoạt động như một module của nhân Linux và tận dụng các tính năng của hệ điều hành này để cung cấp khả năng ảo hóa hiệu quả. Điều này cho phép KVM trở thành một trong những giải pháp ảo hóa phổ biến và mạnh mẽ trên nền tảng Linux.
 
----
-
-Tóm lại, các thành phần chính của KVM bao gồm nhân Linux, module KVM, QEMU, Virtio, libvirt, và Virt-Manager, kết hợp lại để cung cấp khả năng ảo hóa toàn diện và hiệu quả cho các máy chủ Linux.
 
