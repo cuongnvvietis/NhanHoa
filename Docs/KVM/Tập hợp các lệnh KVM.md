@@ -17,12 +17,12 @@ qemu-img create -f raw /var/lib/libvirt/images/amalinix.raw 20G
 
 
 virt-install \
-  --name amalinix \
+  --name amalinix-qcow2 \
   --ram 2048 \
   --vcpus 2 \
-  --disk path=/var/lib/libvirt/images/amalinix.qcow2,size=20,bus=virtio,format=qcow2 \
+  --disk path=/var/lib/libvirt/images/amalinix-qcow2.qcow2,size=20,bus=virtio,format=qcow2 \
   --os-variant generic \
   --network bridge=br-vlan10 \
   --location /home/it/iso/AlmaLinux-8.9-x86_64-minimal.iso \
-  --graphics none \
+  --graphics vnc \
   --console pty,target_type=serial
