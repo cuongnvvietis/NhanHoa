@@ -12,3 +12,5 @@ virt-install \
   --location /home/it/iso/AlmaLinux-8.9-x86_64-minimal.iso \
   --graphics vnc \
   --console pty,target_type=serial
+
+qemu-img create -f raw /var/lib/libvirt/images/amalinix.raw 20G
