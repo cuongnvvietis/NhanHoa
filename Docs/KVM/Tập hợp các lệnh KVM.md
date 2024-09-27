@@ -27,7 +27,7 @@ virt-install \
   --graphics vnc \
   --console pty,target_type=serial
 
-cd /etc/libvirt/qemu/networks/
-virsh net-destroy default
-virsh net-start default
-virsh net-autostart default
+        cd /etc/libvirt/qemu/networks/
+        virsh net-destroy default
+        virsh net-start default
+        virsh net-autostart default
