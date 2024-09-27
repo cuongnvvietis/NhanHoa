@@ -34,3 +34,4 @@ virt-install \
         
         sudo ip link set virbr0 down
         ip link show virbr0
+        brctl show
