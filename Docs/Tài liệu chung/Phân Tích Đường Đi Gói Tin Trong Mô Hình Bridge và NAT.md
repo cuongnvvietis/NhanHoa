@@ -6,6 +6,8 @@ Trong môi trường ảo hóa với KVM/QEMU, có hai mô hình phổ biến đ
 
 ## 1. Mô Hình Bridge
 
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/1.png)
+
 ### Cách Thức Hoạt Động:
 - Bridge hoạt động như một switch ảo, cho phép máy ảo kết nối trực tiếp với mạng vật lý như các thiết bị khác trong mạng.
 - VM nhận địa chỉ IP từ cùng dải mạng của mạng vật lý, thông qua DHCP server của mạng đó (hoặc cấu hình IP tĩnh).
@@ -33,7 +35,7 @@ Trong môi trường ảo hóa với KVM/QEMU, có hai mô hình phổ biến đ
 ---
 
 ## 2. Mô Hình NAT
-
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/a1.png)
 ### Cách Thức Hoạt Động:
 - Với NAT, host đóng vai trò làm gateway cho các VM. Máy ảo nhận địa chỉ IP từ một dải mạng nội bộ riêng (thường là một dải IP ảo như `192.168.x.x`).
 - Host thực hiện quá trình chuyển đổi địa chỉ mạng (NAT) để chuyển các gói tin từ VM ra ngoài và từ bên ngoài vào VM.
