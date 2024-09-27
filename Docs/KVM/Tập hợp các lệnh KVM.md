@@ -31,3 +31,6 @@ virt-install \
         virsh net-destroy default
         virsh net-start default
         virsh net-autostart default
+        
+        sudo ip link set virbr0 down
+        ip link show virbr0
