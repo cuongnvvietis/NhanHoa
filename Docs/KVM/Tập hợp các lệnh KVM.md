@@ -26,3 +26,8 @@ virt-install \
   --location /home/it/iso/AlmaLinux-8.9-x86_64-minimal.iso \
   --graphics vnc \
   --console pty,target_type=serial
+
+cd /etc/libvirt/qemu/networks/
+virsh net-destroy default
+virsh net-start default
+virsh net-autostart default
