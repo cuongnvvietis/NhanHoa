@@ -72,12 +72,12 @@ Sau khi thư mục `backup-veeam` được chia sẻ thành công qua NFS , bạ
 1. Trong giao diện Veeam, chọn **Add Repository**.
 2. Chọn loại **NFS** và điền địa chỉ thư mục chia sẻ, ví dụ: `172.16.2.7:/backup-veeam`.
 3. Tiến hành các bước theo hướng dẫn để hoàn tất việc thêm thư mục NFS vào Veeam như một repository lưu trữ.
-
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_43.png) 
 ### Bước 2: Tạo File Backup Job
 1. Tạo **File Backup Job** mới.
 2. Chọn thư mục `/backup-veeam` từ repository đã thêm làm đối tượng cần backup.
 3. Thiết lập các cấu hình cho job backup (ví dụ: lịch trình backup, proxy backup, và cache repository).
-
+![Command Prompt](https://github.com/cuongnvvietis/NhanHoa/blob/main/Docs/Picture/KVM/Screenshot_45.png) 
 ### Bước 3: Xác Nhận và Thực Hiện Backup
 1. Nhấn **Apply** và sau đó **Finish** để hoàn tất việc cấu hình job backup.
 2. Kiểm tra trạng thái của job trong danh sách các công việc backup để đảm bảo quá trình backup đang chạy đúng.
