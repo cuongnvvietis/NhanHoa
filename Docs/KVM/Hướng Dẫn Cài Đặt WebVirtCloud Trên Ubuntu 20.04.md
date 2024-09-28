@@ -1,0 +1,114 @@
+# Hướng Dẫn Cài Đặt WebVirtCloud Trên Ubuntu 20.04
+
+WebVirtCloud là một công cụ quản lý KVM qua giao diện web đơn giản và mạnh mẽ. Hướng dẫn này giúp bạn cài đặt WebVirtCloud trên hệ điều hành Ubuntu 20.04.
+
+## Mục Lục
+1. [Yêu Cầu Hệ Thống](#yeu-cau-he-thong)
+2. [Các Bước Cài Đặt](#cac-buoc-cai-dat)
+    1. [Cập Nhật Hệ Thống](#cap-nhat-he-thong)
+    2. [Cài Đặt Gói Phụ Thuộc](#cai-dat-goi-phu-thuoc)
+    3. [Tạo Người Dùng WebVirtMgr](#tao-nguoi-dung-webvirtmgr)
+    4. [Tải Mã Nguồn WebVirtCloud](#tai-ma-nguon-webvirtcloud)
+    5. [Cấu Hình Thư Mục Và Quyền](#cau-hinh-thu-muc-va-quyen)
+    6. [Thiết Lập Môi Trường Python Ảo](#thiet-lap-moi-truong-python-ao)
+    7. [Cài Đặt Các Yêu Cầu Python](#cai-dat-cac-yeu-cau-python)
+    8. [Khởi Tạo Cấu Hình WebVirtCloud](#khoi-tao-cau-hinh-webvirtcloud)
+    9. [Tạo Cơ Sở Dữ Liệu](#tao-co-so-du-lieu)
+    10. [Cài Đặt Và Cấu Hình Gunicorn](#cai-dat-va-cau-hinh-gunicorn)
+    11. [Cấu Hình Supervisor](#cau-hinh-supervisor)
+    12. [Cấu Hình Nginx](#cau-hinh-nginx)
+    13. [Khởi Động Dịch Vụ](#khoi-dong-dich-vu)
+    14. [Cấu Hình Firewall](#cau-hinh-firewall)
+
+## Yêu Cầu Hệ Thống
+- Ubuntu 20.04
+- Quyền root hoặc người dùng có quyền `sudo`
+- KVM đã được cài đặt
+
+## Các Bước Cài Đặt
+
+### 1. Cập Nhật Hệ Thống
+Đầu tiên, cập nhật các gói phần mềm của hệ thống:
+
+      sudo apt update && sudo apt upgrade -y   
+### 2. Cài Đặt Gói Phụ Thuộc
+Cài đặt các gói cần thiết để cài đặt WebVirtCloud:
+      sudo apt install -y git python3-pip python3-dev libvirt-dev zlib1g-dev libssl-dev
+      sudo apt install -y libxml2-dev libxslt1-dev python3-venv libvirt-bin qemu-kvm
+### 3. Tạo Người Dùng WebVirtMgr
+Tạo người dùng và nhóm cho dịch vụ WebVirtCloud:
+
+      sudo useradd -d /var/www/webvirtcloud -s /bin/bash webvirtmgr
+### 4. Tải Mã Nguồn WebVirtCloud
+Tải mã nguồn từ GitHub:
+
+      cd /var/www
+      sudo git clone https://github.com/retspen/webvirtcloud
+### 5. Cấu Hình Thư Mục Và Quyền
+Cấp quyền sở hữu thư mục:
+
+      sudo chown -R webvirtmgr:webvirtmgr /var/www/webvirtcloud
+### 6. Thiết Lập Môi Trường Python Ảo
+Tạo môi trường Python ảo và kích hoạt nó:
+
+    cd /var/www/webvirtcloud
+    python3 -m venv venv
+    source venv/bin/activate
+### 7. Cài Đặt Các Yêu Cầu Python
+Cài đặt các gói yêu cầu:
+
+    pip install -r conf/requirements.txt
+### 8. Khởi Tạo Cấu Hình WebVirtCloud
+Tạo file cấu hình:
+
+    cp webvirtcloud/settings.py.template webvirtcloud/settings.py
+Chỉnh sửa settings.py và cập nhật ALLOWED_HOSTS theo nhu cầu.
+
+### 9. Tạo Cơ Sở Dữ Liệu
+Chạy lệnh migrate và tạo tài khoản admin:
+
+    python3 manage.py migrate
+    python3 manage.py createsuperuser
+### 10. Cài Đặt Và Cấu Hình Gunicorn
+Cài đặt Gunicorn:
+
+    pip install gunicorn
+    gunicorn -c /var/www/webvirtcloud/daemon.py webvirtcloud.wsgi
+### 11. Cấu Hình Supervisor
+Cài đặt Supervisor:
+
+    sudo apt install -y supervisor
+Tạo file cấu hình cho Supervisor để quản lý Gunicorn.
+
+### 12. Cấu Hình Nginx
+Cài đặt Nginx:
+
+    sudo apt install -y nginx
+Tạo và kích hoạt cấu hình Nginx cho WebVirtCloud.
+### 13. Khởi Động Dịch Vụ
+Khởi động lại Nginx và Supervisor:
+
+    sudo systemctl restart nginx
+    sudo systemctl restart supervisor
+### 14. Cấu Hình Firewall
+Nếu sử dụng firewall, mở cổng cho Nginx:
+    sudo ufw allow 'Nginx Full'
+-----------------------------------------------------------------------------------
+#tham khảo
+https://www.howtoforge.com/how-to-install-webvirtcloud-kvm-management-on-ubuntu-20-04/#google_vignette
+#Chỉnh sửa 2 modun version của nó trong tệp: conf/requirements.txt
+#Sửa đổi mã nguồn
+#Mở tệp utils.py (hoặc tệp có liên quan): Bạn có thể sử dụng một trình soạn thảo văn bản để mở tệp này, ví dụ:
+
+#nano /srv/webvirtcloud/venv/lib/python3.8/site-packages/qr_code/qrcode/utils.py
+#Thay thế dòng nhập: Tìm dòng có import zoneinfo và thay thế nó bằng đoạn mã sau:
+
+try:
+    import zoneinfo
+except ImportError:
+    from backports import zoneinfo
+
+# Chỉnh về IP Server 
+    nano /srv/webvirtcloud/webvirtcloud/settings.py
+    CSRF_TRUSTED_ORIGINS = ['http://172.16.2.126']
+    sudo nano /srv/webvirtcloud/webvirtcloud/settings.py
