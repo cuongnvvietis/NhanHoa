@@ -13,3 +13,4 @@ service neutron-linuxbridge-agent restart
 
 nano /var/log/nova/nova-scheduler.log    ------controller
 nano /var/log/nova/nova-compute.log       ------ compute
+nano /var/log/neutron/neutron-server.log
