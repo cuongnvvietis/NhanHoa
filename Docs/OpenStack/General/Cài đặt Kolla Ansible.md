@@ -1,34 +1,34 @@
 1. Cài đặt pip bằng phương pháp thủ công (nếu bạn muốn tránh apt):
-
-        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        python3.10 get-pip.py
+   
+                curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+                python3.10 get-pip.py
 
 Kiểm tra phiên bản pip:
 
-        python3.10 -m pip --version
+                python3.10 -m pip --version
 2. Cài đặt các gói cần thiết
 Trên máy deployment (máy chính cài đặt Kolla-Ansible):
 
-        sudo apt update
-        sudo apt install python3-venv python3-dev libffi-dev gcc libssl-dev python3-cffi
+                sudo apt update
+                sudo apt install python3-venv python3-dev libffi-dev gcc libssl-dev python3-cffi
 3. Tạo môi trường ảo và cài đặt Ansible
 Tạo môi trường ảo và cài Ansible trong môi trường ảo.
 
-           python3.10 -m venv /path/to/venv
-           source /path/to/venv/bin/activate
-           pip install 'ansible-core>=2.16,<2.17.99'
-           pip uninstall ansible-core
-           pip install ansible-core==2.16.*
+                python3.10 -m venv /path/to/venv
+                source /path/to/venv/bin/activate
+                pip install 'ansible-core>=2.16,<2.17.99'
+                pip uninstall ansible-core
+                pip install ansible-core==2.16.*
 
 5. Cài đặt Kolla-Ansible
 Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
-        pip install kolla-ansible
+                pip install kolla-ansible
 6. Tạo thư mục cấu hình Kolla
 Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
-        mkdir -p /etc/kolla
-        cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
+                mkdir -p /etc/kolla
+                cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
 
 7. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
