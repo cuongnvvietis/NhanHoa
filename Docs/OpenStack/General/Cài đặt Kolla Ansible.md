@@ -77,10 +77,12 @@ Chạy lệnh sau để tạo mật khẩu cho Kolla:
 9. Bootstrap các node
 Chạy lệnh sau để bootstrap các node:
 
-Bước 1: Tải các role Ansible
-        Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
+Tải các role Ansible
+Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
+
         kolla-ansible install-deps
         kolla-ansible -i /etc/kolla/multinode bootstrap-servers
+        
 10. Kiểm tra trước khi triển khai
 Kiểm tra cấu hình hệ thống trước khi triển khai:
 
