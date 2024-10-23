@@ -1,3 +1,18 @@
+Cấu hình hosts
+Set up /etc/hosts:
+127.0.0.1 localhost
+10.0.0.11 controller
+10.0.0.31 compute1
+10.0.0.32 compute2
+10.0.0.41 block1
+10.0.0.100 deployment
+
+Run “visudo” to enable primary user to “sudo su” without password:
+<username> ALL=(ALL) NOPASSWD:ALL
+
+
+
+
 1. Cài đặt pip bằng phương pháp thủ công
    
          curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
