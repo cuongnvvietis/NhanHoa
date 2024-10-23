@@ -1,9 +1,8 @@
+1. Cài đặt pip bằng phương pháp thủ công (nếu bạn muốn tránh apt):
 
-1. Cài đặt Python và pip
-Bạn đã cài đặt Python 3.10, bây giờ hãy đảm bảo rằng bạn đã có pip cho Python 3.10.
-Nếu pip chưa được cài đặt, sử dụng lệnh sau:
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.10 get-pip.py
 
-        python3.10 -m ensurepip --upgrade
 Kiểm tra phiên bản pip:
 
         python3.10 -m pip --version
