@@ -27,7 +27,8 @@ Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
         mkdir -p /etc/kolla
-        cp -r /usr/local/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
+        cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
+
 6. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
 
