@@ -53,10 +53,11 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
 
 9. Chỉnh sửa tệp inventory (multinode)
-   cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
-   cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
+    
+         cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
+         cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
 
-10. Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
+11. Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
 
         [control]
         controller01 ansible_ssh_user=cuongnv ansible_become=True
@@ -67,33 +68,33 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         [monitoring]
         [storage]
         block01 ansible_ssh_user=cuongnv ansible_become=True
-11. Tạo mật khẩu Kolla. Chạy lệnh sau để tạo mật khẩu cho Kolla:
+12. Tạo mật khẩu Kolla. Chạy lệnh sau để tạo mật khẩu cho Kolla:
 
         kolla-genpwd
 
-12. Tải các role Ansible. Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
+13. Tải các role Ansible. Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
 
         kolla-ansible install-deps
-13. Bootstrap các node. Chạy lệnh sau để bootstrap các node:
+14. Bootstrap các node. Chạy lệnh sau để bootstrap các node:
 
         kolla-ansible -i /etc/kolla/multinode bootstrap-servers
         
-14. Kiểm tra cấu hình hệ thống trước khi triển khai:
+15. Kiểm tra cấu hình hệ thống trước khi triển khai:
 
         kolla-ansible -i /etc/kolla/multinode prechecks
-15. Triển khai OpenStack. Chạy lệnh để triển khai OpenStack:
+16. Triển khai OpenStack. Chạy lệnh để triển khai OpenStack:
 
         kolla-ansible -i /etc/kolla/multinode deploy
     
-16. Kiểm tra sau triển khai. Chạy lệnh sau để kiểm tra việc triển khai OpenStack:
+17. Kiểm tra sau triển khai. Chạy lệnh sau để kiểm tra việc triển khai OpenStack:
 
         kolla-ansible -i /etc/kolla/multinode post-deploy
     
-17. Cài đặt OpenStack CLI. Cuối cùng, cài đặt công cụ dòng lệnh OpenStack:
+18. Cài đặt OpenStack CLI. Cuối cùng, cài đặt công cụ dòng lệnh OpenStack:
 
         pip install python-openstackclient
     
-18. Khởi tạo OpenStack. Bạn có thể khởi tạo OpenStack bằng cách thực hiện tập lệnh init-runonce:
+19. Khởi tạo OpenStack. Bạn có thể khởi tạo OpenStack bằng cách thực hiện tập lệnh init-runonce:
 
         source /etc/kolla/admin-openrc.sh
         cd /path/to/venv/share/kolla-ansible
