@@ -17,7 +17,8 @@ Tạo môi trường ảo và cài Ansible trong môi trường ảo.
         python3.10 -m venv /path/to/venv
         source /path/to/venv/bin/activate
         pip install 'ansible-core>=2.16,<2.17.99'
-        
+        pip install ansible==2.16.*
+
 4. Cài đặt Kolla-Ansible
 Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
@@ -54,7 +55,7 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         ml2_type_drivers: "flat,vlan"
         ml2_mechanism_drivers: "linuxbridge"
         enable_l2_pop: "True"
-linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
+        linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
 
 8. Chỉnh sửa tệp inventory (multinode)
    cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
@@ -77,16 +78,16 @@ Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ th
 Chạy lệnh sau để tạo mật khẩu cho Kolla:
 
         kolla-genpwd
-9. Bootstrap các node
-Chạy lệnh sau để bootstrap các node:
 
-Tải các role Ansible
+9. Tải các role Ansible
 Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
 
         kolla-ansible install-deps
         kolla-ansible -i /etc/kolla/multinode bootstrap-servers
+10. Bootstrap các node
+Chạy lệnh sau để bootstrap các node:
+        kolla-ansible -i /etc/kolla/multinode bootstrap-servers
         
-10. Kiểm tra trước khi triển khai
 Kiểm tra cấu hình hệ thống trước khi triển khai:
 
         kolla-ansible -i /etc/kolla/multinode prechecks
