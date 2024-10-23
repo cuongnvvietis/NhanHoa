@@ -45,6 +45,8 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         kolla_base_distro: "ubuntu"
         kolla_install_type: "source"
 8. Chỉnh sửa tệp inventory (multinode)
+   cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
+
 Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
 
         [control]
