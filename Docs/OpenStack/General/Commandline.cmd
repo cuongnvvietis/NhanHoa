@@ -89,6 +89,23 @@ bash
 Copy code
 rm -rf ovn-controller/ ovn-db/ openvswitch/
 Sau khi xóa các file không cần thiết, quay lại thư mục chính và kiểm tra lại các file khác.
+---------------------------------
+[control]
+controller01 ansible_ssh_user=cuongnv ansible_become=True
+
+[network]
+controller01 ansible_ssh_user=cuongnv ansible_become=True
+
+[compute]
+compute01 ansible_ssh_user=cuongnv ansible_become=True
+
+[monitoring]
+
+[storage]
+block01 ansible_ssh_user=cuongnv ansible_become=True
+
+[deployment]
+localhost ansible_connection=local
 --------------------------------
 kolla-ansible -i /etc/kolla/multinode bootstrap-servers
 kolla-ansible -i /etc/kolla/multinode prechecks
