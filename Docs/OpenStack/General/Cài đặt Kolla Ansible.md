@@ -14,11 +14,11 @@ Trên máy deployment (máy chính cài đặt Kolla-Ansible):
 3. Tạo môi trường ảo và cài đặt Ansible
 Tạo môi trường ảo và cài Ansible trong môi trường ảo.
 
-   python3.10 -m venv /path/to/venv
-   source /path/to/venv/bin/activate
-   pip install 'ansible-core>=2.16,<2.17.99'
-   pip uninstall ansible-core
-   pip install ansible-core==2.16.*
+           python3.10 -m venv /path/to/venv
+           source /path/to/venv/bin/activate
+           pip install 'ansible-core>=2.16,<2.17.99'
+           pip uninstall ansible-core
+           pip install ansible-core==2.16.*
 
 5. Cài đặt Kolla-Ansible
 Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
