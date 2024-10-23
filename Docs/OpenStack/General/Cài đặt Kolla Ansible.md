@@ -3,14 +3,11 @@
       python3.10 get-pip.py
 
 Kiểm tra phiên bản pip:
-
       python3.10 -m pip --version
-2. Cài đặt các gói cần thiết
-Trên máy deployment (máy chính cài đặt Kolla-Ansible):
-
+2. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
       sudo apt install python3-venv
       python3-dev libffi-dev gcc libssl-dev python3-cffi
-4. Tạo môi trường ảo và cài đặt Ansible
+3. Tạo môi trường ảo và cài đặt Ansible
 Tạo môi trường ảo và cài Ansible trong môi trường ảo.
 
                 python3.10 -m venv /path/to/venv
