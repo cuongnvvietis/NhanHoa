@@ -87,18 +87,22 @@ Kiểm tra cấu hình hệ thống trước khi triển khai:
         kolla-ansible -i /etc/kolla/multinode prechecks
 11. Triển khai OpenStack
 Chạy lệnh để triển khai OpenStack:
+
         kolla-ansible -i /etc/kolla/multinode deploy
     
 13. Kiểm tra sau triển khai
 Chạy lệnh sau để kiểm tra việc triển khai OpenStack:
+
         kolla-ansible -i /etc/kolla/multinode post-deploy
     
 15. Cài đặt OpenStack CLI
 Cuối cùng, cài đặt công cụ dòng lệnh OpenStack:
+
         pip install python-openstackclient
     
 17. Khởi tạo OpenStack
 Bạn có thể khởi tạo OpenStack bằng cách thực hiện tập lệnh init-runonce:
+
         source /etc/kolla/admin-openrc.sh
         cd /path/to/venv/share/kolla-ansible
         ./init-runonce
