@@ -14,22 +14,23 @@ Trên máy deployment (máy chính cài đặt Kolla-Ansible):
 3. Tạo môi trường ảo và cài đặt Ansible
 Tạo môi trường ảo và cài Ansible trong môi trường ảo.
 
-        python3.10 -m venv /path/to/venv
-        source /path/to/venv/bin/activate
-        pip install 'ansible-core>=2.16,<2.17.99'
-        pip install ansible==2.16.*
+   python3.10 -m venv /path/to/venv
+   source /path/to/venv/bin/activate
+   pip install 'ansible-core>=2.16,<2.17.99'
+   pip uninstall ansible-core
+   pip install ansible-core==2.16.*
 
-4. Cài đặt Kolla-Ansible
+5. Cài đặt Kolla-Ansible
 Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
         pip install kolla-ansible
-5. Tạo thư mục cấu hình Kolla
+6. Tạo thư mục cấu hình Kolla
 Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
         mkdir -p /etc/kolla
         cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
 
-6. Tạo các khóa SSH để kết nối với các node
+7. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
 
         ssh-keygen -t rsa -b 4096
