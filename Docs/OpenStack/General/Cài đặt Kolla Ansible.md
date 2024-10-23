@@ -65,17 +65,14 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
 Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
 
         [control]
-        controller ansible_host=<controller_ip> ansible_user=<user>
-        
+        controller01 ansible_ssh_user=cuongnv ansible_become=True
         [network]
-        controller ansible_host=<controller_ip> ansible_user=<user>
-        
+        controller01 ansible_ssh_user=cuongnv ansible_become=True
         [compute]
-        compute1 ansible_host=<compute1_ip> ansible_user=<user>
-        compute2 ansible_host=<compute2_ip> ansible_user=<user>
-        
+        compute01 ansible_ssh_user=cuongnv ansible_become=True
+        [monitoring]
         [storage]
-        storage1 ansible_host=<storage1_ip> ansible_user=<user>
+        block01 ansible_ssh_user=cuongnv ansible_become=True
 8. Tạo mật khẩu Kolla
 Chạy lệnh sau để tạo mật khẩu cho Kolla:
 
