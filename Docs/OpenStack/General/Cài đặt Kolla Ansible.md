@@ -1,42 +1,40 @@
 1. Cài đặt pip bằng phương pháp thủ công (nếu bạn muốn tránh apt):
    
-      curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-      python3.10 get-pip.py
+         curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+         python3.10 get-pip.py
 
-   Kiểm tra phiên bản pip:
-      python3.10 -m pip --version
-2. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
-      sudo apt install python3-venv
-      python3-dev libffi-dev gcc libssl-dev python3-cffi
-3. Tạo môi trường ảo và cài Ansible trong môi trường ảo.
+2. Kiểm tra phiên bản pip:
+         python3.10 -m pip --version
+3. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
+   
+         sudo apt install python3-venv
+         python3-dev libffi-dev gcc libssl-dev python3-cffi
+4. Tạo môi trường ảo và cài Ansible trong môi trường ảo:
 
-      python3.10 -m venv /path/to/venv
-      source /path/to/venv/bin/activate
-      pip install 'ansible-core>=2.16,<2.17.99'
-      pip uninstall ansible-core
-      pip install ansible-core==2.16.*
+         python3.10 -m venv /path/to/venv
+         source /path/to/venv/bin/activate
+         pip install 'ansible-core>=2.16,<2.17.99'
+         pip uninstall ansible-core
+         pip install ansible-core==2.16.*
 
-5. Cài đặt Kolla-Ansible
-Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
+5. Cài đặt Kolla-Ansible. Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
-                pip install kolla-ansible
-6. Tạo thư mục cấu hình Kolla
-Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
+         pip install kolla-ansible
+6. Tạo thư mục cấu hình Kolla. Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
-                mkdir -p /etc/kolla
-                cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
+         mkdir -p /etc/kolla
+         cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
 
 7. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
 
-        ssh-keygen -t rsa -b 4096
-        ssh-copy-id <user>@<node-ip>
-        ssh-copy-id cuongnv@controller01
-           ssh-copy-id cuongnv@controller01
-           ssh-copy-id cuongnv@compute01
-           ssh-copy-id cuongnv@block01
-Lặp lại với các node khác (controller, compute, storage...).
-
+         ssh-keygen -t rsa -b 4096
+         ssh-copy-id <user>@<node-ip>
+         ssh-copy-id cuongnv@controller01
+         ssh-copy-id cuongnv@controller01
+         ssh-copy-id cuongnv@compute01
+         ssh-copy-id cuongnv@block01
+   
 8. Chỉnh sửa tệp cấu hình /etc/kolla/globals.yml
 Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
 
@@ -54,11 +52,11 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         enable_l2_pop: "True"
         linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
 
-8. Chỉnh sửa tệp inventory (multinode)
+9. Chỉnh sửa tệp inventory (multinode)
    cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
    cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
 
-Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
+10. Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ thống:
 
         [control]
         controller01 ansible_ssh_user=cuongnv ansible_become=True
@@ -69,40 +67,33 @@ Chỉnh sửa tệp /etc/kolla/multinode để khai báo các node trong hệ th
         [monitoring]
         [storage]
         block01 ansible_ssh_user=cuongnv ansible_become=True
-8. Tạo mật khẩu Kolla
-Chạy lệnh sau để tạo mật khẩu cho Kolla:
+11. Tạo mật khẩu Kolla. Chạy lệnh sau để tạo mật khẩu cho Kolla:
 
         kolla-genpwd
 
-9. Tải các role Ansible
-Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
+12. Tải các role Ansible. Kolla-Ansible sử dụng Galaxy để tải các role cần thiết. Chạy lệnh sau để tải các role:
 
         kolla-ansible install-deps
-10. Bootstrap các node
-Chạy lệnh sau để bootstrap các node:
+13. Bootstrap các node. Chạy lệnh sau để bootstrap các node:
 
         kolla-ansible -i /etc/kolla/multinode bootstrap-servers
         
-Kiểm tra cấu hình hệ thống trước khi triển khai:
+14. Kiểm tra cấu hình hệ thống trước khi triển khai:
 
         kolla-ansible -i /etc/kolla/multinode prechecks
-11. Triển khai OpenStack
-Chạy lệnh để triển khai OpenStack:
+15. Triển khai OpenStack. Chạy lệnh để triển khai OpenStack:
 
         kolla-ansible -i /etc/kolla/multinode deploy
     
-13. Kiểm tra sau triển khai
-Chạy lệnh sau để kiểm tra việc triển khai OpenStack:
+16. Kiểm tra sau triển khai. Chạy lệnh sau để kiểm tra việc triển khai OpenStack:
 
         kolla-ansible -i /etc/kolla/multinode post-deploy
     
-15. Cài đặt OpenStack CLI
-Cuối cùng, cài đặt công cụ dòng lệnh OpenStack:
+17. Cài đặt OpenStack CLI. Cuối cùng, cài đặt công cụ dòng lệnh OpenStack:
 
         pip install python-openstackclient
     
-17. Khởi tạo OpenStack
-Bạn có thể khởi tạo OpenStack bằng cách thực hiện tập lệnh init-runonce:
+18. Khởi tạo OpenStack. Bạn có thể khởi tạo OpenStack bằng cách thực hiện tập lệnh init-runonce:
 
         source /etc/kolla/admin-openrc.sh
         cd /path/to/venv/share/kolla-ansible
