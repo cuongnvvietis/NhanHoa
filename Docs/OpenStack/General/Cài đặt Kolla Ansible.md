@@ -1,20 +1,20 @@
 1. Cài đặt pip bằng phương pháp thủ công (nếu bạn muốn tránh apt):
+   
       curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
       python3.10 get-pip.py
 
-Kiểm tra phiên bản pip:
+   Kiểm tra phiên bản pip:
       python3.10 -m pip --version
 2. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
       sudo apt install python3-venv
       python3-dev libffi-dev gcc libssl-dev python3-cffi
-3. Tạo môi trường ảo và cài đặt Ansible
-Tạo môi trường ảo và cài Ansible trong môi trường ảo.
+3. Tạo môi trường ảo và cài Ansible trong môi trường ảo.
 
-                python3.10 -m venv /path/to/venv
-                source /path/to/venv/bin/activate
-                pip install 'ansible-core>=2.16,<2.17.99'
-                pip uninstall ansible-core
-                pip install ansible-core==2.16.*
+      python3.10 -m venv /path/to/venv
+      source /path/to/venv/bin/activate
+      pip install 'ansible-core>=2.16,<2.17.99'
+      pip uninstall ansible-core
+      pip install ansible-core==2.16.*
 
 5. Cài đặt Kolla-Ansible
 Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
