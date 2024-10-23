@@ -1,7 +1,7 @@
 1. Cài đặt pip bằng phương pháp thủ công (nếu bạn muốn tránh apt):
 
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-python3.10 get-pip.py
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        python3.10 get-pip.py
 
 Kiểm tra phiên bản pip:
 
