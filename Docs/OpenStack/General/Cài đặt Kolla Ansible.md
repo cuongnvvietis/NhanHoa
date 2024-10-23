@@ -39,11 +39,20 @@ Lặp lại với các node khác (controller, compute, storage...).
 8. Chỉnh sửa tệp cấu hình /etc/kolla/globals.yml
 Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
 
-        network_interface: "eth0"  # Giao diện mạng chính
-        neutron_external_interface: "eth1"  # Giao diện mạng ngoài
-        kolla_internal_vip_address: "10.0.0.10"  # IP VIP
-        kolla_base_distro: "ubuntu"
-        kolla_install_type: "source"
+                workaround_ansible_issue_8743: yes
+                config_strategy: "COPY_ALWAYS"
+                kolla_base_distro: "ubuntu"
+                kolla_internal_vip_address: "172.16.2.229"
+                network_interface: "enp3s0"
+                enable_cinder: "yes"
+                enable_cinder_backup: "yes"
+                enable_cinder_backend_lvm: "yes"
+                neutron_plugin_type: "ml2"
+                ml2_type_drivers: "flat,vlan"
+                ml2_mechanism_drivers: "linuxbridge"
+                enable_l2_pop: "True"
+linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
+
 8. Chỉnh sửa tệp inventory (multinode)
    cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
 
