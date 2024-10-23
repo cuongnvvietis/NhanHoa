@@ -33,6 +33,10 @@ Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới c�
 
         ssh-keygen -t rsa -b 4096
         ssh-copy-id <user>@<node-ip>
+        ssh-copy-id cuongnv@controller01
+           ssh-copy-id cuongnv@controller01
+           ssh-copy-id cuongnv@compute01
+           ssh-copy-id cuongnv@block01
 Lặp lại với các node khác (controller, compute, storage...).
 
 8. Chỉnh sửa tệp cấu hình /etc/kolla/globals.yml
