@@ -10,9 +10,6 @@ Set up /etc/hosts:
 Run “visudo” to enable primary user to “sudo su” without password:
 <username> ALL=(ALL) NOPASSWD:ALL
 
-
-
-
 1. Cài đặt pip bằng phương pháp thủ công
    
          curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -23,34 +20,32 @@ Run “visudo” to enable primary user to “sudo su” without password:
 3. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
    
          sudo apt install python3-venv
-         python3-dev libffi-dev gcc libssl-dev python3-cffi
-4. Tạo môi trường ảo và cài Ansible trong môi trường ảo:
+         sudo apt install python3-dev libffi-dev gcc libssl-dev python3-cffi
+5. Tạo môi trường ảo và cài Ansible trong môi trường ảo:
 
          python3.10 -m venv /path/to/venv
          source /path/to/venv/bin/activate
-         pip install 'ansible-core>=2.16,<2.17.99'
-         pip uninstall ansible-core
+         #pip install 'ansible-core>=2.16,<2.17.99'
+         #pip uninstall ansible-core
          pip install ansible-core==2.16.*
 
-5. Cài đặt Kolla-Ansible. Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
+6. Cài đặt Kolla-Ansible. Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
          pip install kolla-ansible
-6. Tạo thư mục cấu hình Kolla. Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
+7. Tạo thư mục cấu hình Kolla. Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
          mkdir -p /etc/kolla
          cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
 
-7. Tạo các khóa SSH để kết nối với các node
+8. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
 
          ssh-keygen -t rsa -b 4096
-         ssh-copy-id <user>@<node-ip>
-         ssh-copy-id cuongnv@controller01
          ssh-copy-id cuongnv@controller01
          ssh-copy-id cuongnv@compute01
          ssh-copy-id cuongnv@block01
    
-8. Chỉnh sửa tệp cấu hình /etc/kolla/globals.yml
+9. Chỉnh sửa tệp cấu hình /etc/kolla/globals.yml
 Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
 
         workaround_ansible_issue_8743: yes
@@ -67,7 +62,7 @@ Cập nhật tệp /etc/kolla/globals.yml theo môi trường của bạn:
         enable_l2_pop: "True"
         linuxbridge_physical_interface_mappings: "physnet1:enp3s0"
 
-9. Chỉnh sửa tệp inventory (multinode)
+10. Chỉnh sửa tệp inventory (multinode)
     
          cp -r /path/to/venv/share/kolla-ansible/ansible/inventory/* .
          cp /path/to/venv/share/kolla-ansible/ansible/inventory/* .
