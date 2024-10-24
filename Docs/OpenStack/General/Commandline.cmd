@@ -112,5 +112,9 @@ kolla-ansible -i /etc/kolla/multinode prechecks
 kolla-ansible -i /etc/kolla/multinode deploy
 ----------------------------------------
 
-sudo docker rm -f $(docker ps -aq)
+
+
+sudo docker stop $(sudo docker ps -aq)
+sudo docker rm $(sudo docker ps -aq)
 sudo docker rmi -f $(docker images -q)
+sudo rm -rf /var/lib/docker
