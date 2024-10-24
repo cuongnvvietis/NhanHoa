@@ -1,6 +1,7 @@
 Mô hình 
 
 1. Cấu hình hosts
+   
          /etc/hosts:
          127.0.0.1 localhost
          10.0.0.11 controller
@@ -9,10 +10,10 @@ Mô hình
          10.0.0.41 block1
          10.0.0.100 deployment
 
-2. Run “visudo” to enable primary user to “sudo su” without password:
+3. Run “visudo” to enable primary user to “sudo su” without password:
 
          cuongnv ALL=(ALL) NOPASSWD:ALL
-3. On block1 run following commands as superuser:
+4. On block1 run following commands as superuser:
    
          apt update -y
          apt upgrade -y
@@ -24,18 +25,18 @@ Mô hình
          update-initramfs -u
          reboot
 
-4. Cài đặt pip bằng phương pháp thủ công
+5. Cài đặt pip bằng phương pháp thủ công
    
          curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
          python3.10 get-pip.py
 
-5. Kiểm tra phiên bản pip:
+6. Kiểm tra phiên bản pip:
          python3.10 -m pip --version
-6. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
+7. Cài đặt các gói cần thiết. Trên máy deployment (máy chính cài đặt Kolla-Ansible):
    
          sudo apt install python3-venv
          sudo apt install python3-dev libffi-dev gcc libssl-dev python3-cffi
-7. Tạo môi trường ảo và cài Ansible trong môi trường ảo:
+8. Tạo môi trường ảo và cài Ansible trong môi trường ảo:
 
          python3.10 -m venv /path/to/venv
          source /path/to/venv/bin/activate
@@ -43,15 +44,15 @@ Mô hình
          #pip uninstall ansible-core
          pip install ansible-core==2.16.*
 
-8. Cài đặt Kolla-Ansible. Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
+9. Cài đặt Kolla-Ansible. Sau khi cài đặt Ansible, bạn cài đặt Kolla-Ansible:
 
          pip install kolla-ansible
-9. Tạo thư mục cấu hình Kolla. Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
+10. Tạo thư mục cấu hình Kolla. Sao chép các tệp cấu hình ví dụ của Kolla-Ansible vào /etc/kolla:
 
          mkdir -p /etc/kolla
          cp -r /path/to/venv/share/kolla-ansible/etc_examples/kolla/* /etc/kolla/
 
-10. Tạo các khóa SSH để kết nối với các node
+11. Tạo các khóa SSH để kết nối với các node
 Trên máy deployment, bạn cần tạo khóa SSH và phân phối nó tới các node:
 
          ssh-keygen -t rsa -b 4096
