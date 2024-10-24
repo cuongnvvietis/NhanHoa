@@ -110,3 +110,7 @@ localhost ansible_connection=local
 kolla-ansible -i /etc/kolla/multinode bootstrap-servers
 kolla-ansible -i /etc/kolla/multinode prechecks
 kolla-ansible -i /etc/kolla/multinode deploy
+----------------------------------------
+
+sudo docker rm -f $(docker ps -aq)
+sudo docker rmi -f $(docker images -q)
