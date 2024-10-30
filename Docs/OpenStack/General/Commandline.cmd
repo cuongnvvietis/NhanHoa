@@ -118,3 +118,9 @@ sudo docker stop $(sudo docker ps -aq)
 sudo docker rm $(sudo docker ps -aq)
 sudo docker rmi -f $(docker images -q)
 sudo rm -rf /var/lib/docker
+
+
+--------------------------------------------------
+Hiển thị image ở đâu
+openstack image show <image-id>
+cd /var/lib/glance/images/
