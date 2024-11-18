@@ -45,19 +45,23 @@ Chức năng: Chỉ định máy chủ nhận email cho domain.
 Ví dụ cấu hình:
 example.com.    IN    MX    10 mail.example.com.
 Cách kiểm tra:
+
 ```
 dig example.com MX
 nslookup -query=MX example.com
 ```
+
 TXT (Text Record)
 Chức năng: Lưu trữ thông tin dạng văn bản (SPF, DKIM, xác thực domain, ...).
 Ví dụ cấu hình:
+
 example.com.    IN    TXT    "v=spf1 include:_spf.google.com ~all"
 Cách kiểm tra:
+
 ```
 dig example.com TXT
 nslookup -query=TXT example.com
-
+```
 NS (Name Server Record)
 Chức năng: Xác định máy chủ DNS chịu trách nhiệm cho domain.
 Ví dụ cấu hình:
@@ -85,6 +89,7 @@ Sử dụng lệnh sau để kiểm tra tất cả các bản ghi DNS cho một 
 
 dig example.com ANY
 Kiểm tra cụ thể hơn:
+
 ```
 host -t A example.com
 host -t MX example.com
