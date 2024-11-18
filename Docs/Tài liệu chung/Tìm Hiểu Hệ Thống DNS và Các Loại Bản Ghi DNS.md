@@ -106,7 +106,7 @@ mx:mail.nhanhoa.com.vn: Máy chủ email mail.nhanhoa.com.vn được phép gử
 include:_spf.google.com: Bao gồm các quy tắc SPF từ Google.
 ~all: Thư từ nguồn không được liệt kê trong bản ghi sẽ bị đánh dấu là "không được phép" nhưng vẫn có thể được nhận (chế độ mềm).
 
-### **NS (Name Server Record)
+### **NS (Name Server Record))**
 Chức năng: Xác định máy chủ DNS chịu trách nhiệm cho domain.
 Cách kiểm tra:
 ```
@@ -120,7 +120,7 @@ ns2013.nhanhoa.com.vn
 ns2014.nhanhoa.com.vn
 Các máy chủ DNS này chịu trách nhiệm xử lý các truy vấn DNS cho tên miền nhanhoa.com.vn.
 
-### **SOA (Start of Authority)
+### **SOA (Start of Authority))**
 Chức năng: Chứa thông tin quản trị DNS (máy chủ chính, người quản trị, thông số zone).
 Cách kiểm tra:
 ```
