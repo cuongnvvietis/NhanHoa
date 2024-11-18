@@ -154,3 +154,79 @@ Sử dụng lệnh sau để kiểm tra tất cả các bản ghi DNS cho một 
 ```
 dig nhanhoa.com ANY
 ```
+
+# Hướng Dẫn Các Bản Ghi DNS (PTR, SRV, CAA, DS, DNSKEY)
+
+## **1. PTR (Pointer Record)**
+- **Chức năng:** 
+  - Dùng để ánh xạ địa chỉ IP ngược trở lại tên miền (Reverse DNS Lookup).
+- **Ví dụ:**
+  - Địa chỉ IP `192.168.1.1` có thể ánh xạ ngược thành `example.com`.
+- **Cách kiểm tra:**
+```
+dig -x 113.164.228.219
+```
+Kết quả truy vấn:
+```
+219.228.164.113.in-addr.arpa. 3597 IN   PTR     static.vnpt.vn.
+```
+
+Bản ghi PTR đã được thiết lập, ánh xạ địa chỉ IP 113.164.228.219 ngược lại thành tên miền static.vnpt.vn.
+
+## **2. SRV (Service Record)**
+- **Chức năng:** 
+  - Chỉ định thông tin về các dịch vụ cụ thể, như giao thức, port, và độ ưu tiên cho dịch vụ.
+- **Ứng dụng:**
+  - Dùng trong các hệ thống như SIP, XMPP, và Active Directory.
+
+- **Cách kiểm tra:**
+```
+dig _sip._tcp.example.com SRV
+```
+
+## **3. CAA (Certification Authority Authorization)**
+- **Chức năng:** 
+  - Quy định nhà cung cấp chứng chỉ (CA) nào được phép phát hành chứng chỉ SSL/TLS cho tên miền.
+- **Ví dụ:**
+```
+example.com. 86400 IN CAA 0 issue "letsencrypt.org"
+```
+  - Chỉ cho phép Let's Encrypt phát hành chứng chỉ SSL cho `example.com`.
+- **Cách kiểm tra:**
+```
+dig example.com CAA
+```
+
+## **4. DS (Delegation Signer Record)**
+- **Chức năng:** 
+  - Dùng trong DNSSEC (DNS Security Extensions), cung cấp chữ ký số để xác minh tính toàn vẹn của bản ghi DNS.
+- **Ví dụ:**
+```
+example.com. 86400 IN DS 12345 13 2 49FD46E6C4B45C55D4AC...
+```
+  - `12345`: Key tag.
+  - `13`: Thuật toán sử dụng (ví dụ: ECDSA).
+  - `2`: Loại hàm băm (SHA-256).
+  - Giá trị hàm băm: `49FD46...`.
+- **Cách kiểm tra:**
+```
+dig example.com DS
+```
+
+---
+
+## **5. DNSKEY**
+- **Chức năng:** 
+  - Là một phần của DNSSEC, chứa khóa công khai để xác minh chữ ký số trong DNSSEC.
+- **Ví dụ:**
+```
+example.com. 86400 IN DNSKEY 256 3 8 AwEAAdE...
+```
+  - `256`: Loại khóa (256 là khóa ZSK, 257 là khóa KSK).
+  - `3`: Sử dụng DNSSEC.
+  - `8`: Thuật toán (RSA/SHA-256).
+  - Giá trị khóa: `AwEAAdE...`.
+- **Cách kiểm tra:**
+```
+dig example.com DNSKEY
+```
