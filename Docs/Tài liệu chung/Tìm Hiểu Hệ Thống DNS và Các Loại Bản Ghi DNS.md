@@ -59,7 +59,7 @@ www.nhanhoa.com.        300     IN      CNAME   nhanhoa.com.
 ```
 Giải thích: Kết quả CNAME: Tên miền www.nhanhoa.com.vn được ánh xạ tới nhanhoa.com.vn
 
-### **MX (Mail Exchange Record)
+### **MX (Mail Exchange Record)**
 Chức năng: Chỉ định máy chủ nhận email cho domain.
 Cách kiểm tra:
 
