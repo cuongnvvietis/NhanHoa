@@ -14,86 +14,143 @@ Dưới đây là các loại bản ghi DNS phổ biến và cách kiểm tra:
 
 ### **A (Address Record)**
 - **Chức năng**: Ánh xạ một domain sang địa chỉ IPv4.
-- **Ví dụ cấu hình**:
-example.com.    IN    A    192.168.1.1
-Cách kiểm tra:
-```
-dig example.com A
-nslookup example.com
-```
-AAAA (IPv6 Address Record)
-Chức năng: Ánh xạ domain sang địa chỉ IPv6.
-Ví dụ cấu hình:
-example.com.    IN    AAAA    2401:db00::1234
 
 Cách kiểm tra:
 ```
-dig example.com AAAA
-nslookup example.com
+dig nhanhoa.com A
 ```
-CNAME (Canonical Name Record)
-Chức năng: Chuyển hướng từ một domain sang một domain khác.
-Ví dụ cấu hình:
-www.example.com.    IN    CNAME    example.com.
+
+### **AAAA (IPv6 Address Record)**
+
+AAAA (IPv6 Address Record)
+Chức năng: Ánh xạ domain sang địa chỉ IPv6.
+
 Cách kiểm tra:
 ```
-dig www.example.com CNAME
-nslookup www.example.com
+dig nhanhoa.com AAAA
 ```
-MX (Mail Exchange Record)
+Giải thích 
+
+```plaintext
+nhanhoa.com.            293     IN      A       104.22.4.116
+nhanhoa.com.            293     IN      A       172.67.22.61
+nhanhoa.com.            293     IN      A       104.22.5.116
+
+;; ANSWER SECTION:
+nhanhoa.com.            228     IN      AAAA    2606:4700:10::ac43:163d
+nhanhoa.com.            228     IN      AAAA    2606:4700:10::6816:474
+nhanhoa.com.            228     IN      AAAA    2606:4700:10::6816:574
+```
+Thời gian TTL: 293 giây. Sau khoảng thời gian này, bản ghi cần được làm mới từ máy chủ DNS.
+Đây là các địa chỉ IPv4 tương ứng với tên miền nhanhoa.com.
+Website này có nhiều địa chỉ IP, cho thấy nó sử dụng cơ chế tăng tính sẵn sàng và cân bằng tải.
+
+### **CNAME (Canonical Name Record)**
+CNAME (Canonical Name Record)
+Chức năng: Chuyển hướng từ một domain sang một domain khác.
+
+Cách kiểm tra:
+```
+dig www.nhanhoa.com.vn CNAME
+```
+```
+;; ANSWER SECTION:
+www.nhanhoa.com.        300     IN      CNAME   nhanhoa.com.
+```
+Giải thích: Kết quả CNAME: Tên miền www.nhanhoa.com.vn được ánh xạ tới nhanhoa.com.vn
+
+### **MX (Mail Exchange Record)
 Chức năng: Chỉ định máy chủ nhận email cho domain.
-Ví dụ cấu hình:
-example.com.    IN    MX    10 mail.example.com.
 Cách kiểm tra:
 
 ```
 dig example.com MX
-nslookup -query=MX example.com
 ```
 
+```
+;; ANSWER SECTION:
+www.nhanhoa.com.        195     IN      CNAME   nhanhoa.com.
+nhanhoa.com.            163     IN      MX      21 mail.nhanhoa.com.
+```
+Giải thích: MX: nhanhoa.com sử dụng máy chủ email mail.nhanhoa.com với priority 21.
+
+### **TXT (Address Record)**
 TXT (Text Record)
 Chức năng: Lưu trữ thông tin dạng văn bản (SPF, DKIM, xác thực domain, ...).
-Ví dụ cấu hình:
 
-example.com.    IN    TXT    "v=spf1 include:_spf.google.com ~all"
 Cách kiểm tra:
 
 ```
-dig example.com TXT
+dig nhanhoa.com TXT
 nslookup -query=TXT example.com
 ```
-NS (Name Server Record)
+
+Nội dung bản ghi TXT:
+Google Site Verification:
+```
+google-site-verification=gvC6jb4r4D7S9aMNKDwHz2SILpshsMlhFocxt2tiwB8
+```
+Bản ghi này dùng để xác minh quyền sở hữu tên miền trên Google (Google Search Console, Google Ads, ...).
+SPF (Sender Policy Framework):
+```
+v=spf1 a mx ptr ip4:103.28.36.250 mx:mail.nhanhoa.com.vn include:_spf.google.com ~all
+```
+
+Bản ghi này dùng để xác thực email, giảm nguy cơ email giả mạo (phishing).
+Giải thích chi tiết:
+a: Chấp nhận các email từ địa chỉ IP tương ứng với bản ghi A.
+mx: Chấp nhận các email từ máy chủ email (MX) được cấu hình.
+ptr: Chấp nhận các email có IP khớp với bản ghi PTR.
+ip4:103.28.36.250: Chỉ định IP được phép gửi email.
+mx:mail.nhanhoa.com.vn: Máy chủ email mail.nhanhoa.com.vn được phép gửi email.
+include:_spf.google.com: Bao gồm các quy tắc SPF từ Google.
+~all: Thư từ nguồn không được liệt kê trong bản ghi sẽ bị đánh dấu là "không được phép" nhưng vẫn có thể được nhận (chế độ mềm).
+
+### **NS (Name Server Record)
 Chức năng: Xác định máy chủ DNS chịu trách nhiệm cho domain.
-Ví dụ cấu hình:
-
-example.com.    IN    NS    ns1.example.com.
-example.com.    IN    NS    ns2.example.com.
 Cách kiểm tra:
 ```
-dig example.com NS
-nslookup -query=NS example.com
+dig nhanhoa.com NS
 ```
-SOA (Start of Authority)
+Ý Nghĩa
+Máy chủ DNS: nhanhoa.com.vn được quản lý bởi 4 máy chủ tên:
+ns2011.nhanhoa.com.vn
+ns2012.nhanhoa.com.vn
+ns2013.nhanhoa.com.vn
+ns2014.nhanhoa.com.vn
+Các máy chủ DNS này chịu trách nhiệm xử lý các truy vấn DNS cho tên miền nhanhoa.com.vn.
+
+### **SOA (Start of Authority)
 Chức năng: Chứa thông tin quản trị DNS (máy chủ chính, người quản trị, thông số zone).
-Ví dụ cấu hình:
-
-example.com.    IN    SOA    ns1.example.com. admin.example.com. 2024111801 3600 7200 1209600 86400
 Cách kiểm tra:
 ```
-dig example.com SOA
-nslookup -query=SOA example.com
+dig nhanhoa.com SOA
 ```
+Truy vấn: Tìm bản ghi SOA (Start of Authority) của tên miền nhanhoa.com.vn.
+ANSWER SECTION
+```
+nhanhoa.com.vn.         2210    IN      SOA     ns2011.nhanhoa.com.vn. hostmaster. 238 1800 600 1209600 3600
+```
+TTL: 2210 giây (~36.8 phút) – Bản ghi sẽ được lưu trữ trong cache trong thời gian này.
+Chi tiết bản ghi SOA:
+
+Primary NS: ns2011.nhanhoa.com.vn – Máy chủ tên chính quản lý tên miền.
+
+Email quản trị: hostmaster – Địa chỉ email của người quản trị DNS. (Dấu chấm thứ hai ngụ ý email: 
+hostmaster@nhanhoa.com.vn).
+
+Serial Number: 238 – Số phiên bản của cấu hình DNS. Thay đổi khi DNS được cập nhật.
+
+Refresh Time: 1800 giây (30 phút) – Máy chủ phụ kiểm tra máy chủ chính để cập nhật dữ liệu.
+
+Retry Time: 600 giây (10 phút) – Khoảng thời gian thử lại khi không kết nối được với máy chủ chính.
+
+Expire Time: 1209600 giây (14 ngày) – Thời gian máy chủ phụ lưu bản sao DNS trước khi coi là hết hạn.
+
+Minimum TTL: 3600 giây (1 giờ) – Thời gian mặc định để các máy chủ DNS cache thông tin.
 
 ## 3. **Ví dụ Kiểm Tra Toàn Bộ Domain**
 Sử dụng lệnh sau để kiểm tra tất cả các bản ghi DNS cho một domain:
 
-dig example.com ANY
-Kiểm tra cụ thể hơn:
+dig nhanhoa.com ANY
 
-```
-host -t A example.com
-host -t MX example.com
-```
-Sử dụng công cụ web
-Công cụ trực tuyến: MXToolbox
-Nhập domain và kiểm tra bản ghi DNS.
