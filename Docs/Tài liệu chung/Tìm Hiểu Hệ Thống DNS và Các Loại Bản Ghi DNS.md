@@ -151,6 +151,6 @@ Minimum TTL: 3600 giây (1 giờ) – Thời gian mặc định để các máy 
 
 ## 3. **Ví dụ Kiểm Tra Toàn Bộ Domain**
 Sử dụng lệnh sau để kiểm tra tất cả các bản ghi DNS cho một domain:
-
+```
 dig nhanhoa.com ANY
-
+```
