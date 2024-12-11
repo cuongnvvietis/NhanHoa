@@ -12,7 +12,7 @@ DELETE FROM volumes WHERE id='e51a3649-f1fc-4958-bde3-4f9bdf3e4513';
 #cloud-config
 chpasswd:
   list: |
-    username:newpassword
+    username:123456a@
   expire: False
 ssh_pwauth: True
 ```
