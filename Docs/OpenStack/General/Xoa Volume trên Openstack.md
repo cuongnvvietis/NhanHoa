@@ -61,7 +61,7 @@ for volume in 17322a98-49fc-4efa-a0a2-42823db6551d \
 #cloud-config
 chpasswd:
   list: |
-    username:123456a@
+    root:123456a@
   expire: False
 ssh_pwauth: True
 ```
